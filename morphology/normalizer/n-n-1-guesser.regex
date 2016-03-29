@@ -1,0 +1,12 @@
+# nominal slot 1: derivation
+
+# [ "[" "--" "]" {chika} "[" "NDeriv" "]" "[" "+Aug" "]"] : {chika}
+ [ "[" "--" "]" {chikan} "[" "NDeriv" "]" "[" "+Aug" "]"] : {chikan}
+| [ "[" "--" "]" {karay} "[" "NDeriv" "]" "[" "+Aug" "]"] : {karay}
+| [ "[" "--" "]" {kankaray} "[" "NDeriv" "]" "[" "+Aug" "]"] : {kankaray}
+| [ "[" "--" "]" {chaq} "[" "NDeriv" "]" "[" "+Aug" "]"] : {chaq}
+| [ "[" "--" "]" {su} "[" "NDeriv" "]" "[" "+Aug" "]"] : {su}
+| [ "[" "--" "]" {chachaq} "[" "NDeriv" "]" "[" "+Aug" "]"] : {chachaq}
+| ["[" "--" "]" {cha} "[" "NDeriv" "]" "[" "+Dim" "]"] : {cha}
+| ["[" "--" "]" {liku} "[" "NDeriv" "]" "[" "+Char" "]"] : {liku}
+;

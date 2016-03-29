@@ -1,0 +1,16 @@
+#nominal slot 5: case
+
+   [ "[" "--" "]" {ntin} "[" "Cas" "]" "[" "+Iclsv" "]"]:["@POSS"{ntin}]
+|  [ "[" "--" "]" {nintin} "[" "Cas" "]" "[" "+Iclsv" "]"]:["@POSSni"{nintin}]
+|  [ "[" "--" "]" {nintin} "[" "Cas" "]" "[" "+Iclsv" "]"]:["@POSSni"{ñintin}]
+# can occur with other than 3.sg! e.g. kinsantiykuta
+|  [ "[" "--" "]" {ninti} "[" "Cas" "]" "[" "+Iclsv" "]"]: ["@POSSni"{ñinti}]
+|  [ "[" "--" "]" {nti} "[" "Cas" "]" "[" "+Iclsv" "]"]: ["@POSS"{nti}]
+|  [ "[" "--" "]" {ninti} "[" "Cas" "]" "[" "+Iclsv" "]"]: ["@POSSni"{ninti}]
+|  [ "[" "--" "]" {pura} "[" "Cas" "]" "[" "+Intsoc" "]"] : {pura}
+|  [ "[" "--" "]" {nka}  "[" "Cas" "]" "[" "+Distr" "]"] : {nka}
+|  [ "[" "--" "]" {kama}  "[" "Cas" "]" "[" "+Term" "]"] : {kama}
+|  [ "[" "--" "]" {niq}  "[" "Cas" "]" "[" "+Aprx" "]"] : {niq}
+|  [ "[" "--" "]" {niq}  "[" "Cas" "]" "[" "+Aprx" "]"] : {ñiq}
+;
+

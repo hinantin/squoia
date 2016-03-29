@@ -1,0 +1,12 @@
+# non-verbalizable particles
+
+  [ {ari} "["  "Part_Affir" "]" ] :  {ari}
+| [ {ña} "["  "Part_Disc" "]" ] :  {ña}
+| [ {icha} "["  "Part_Contr" "]" ] :  {icha}
+| [ {si} "["  "Part_Cond" "]" ] :  {si}
+| [ {maski} "["  "Part_Conec" "]" ] :  {maski}
+| [ {anri} "["  "Part_Affir" "]" ] :  {anri}
+| [ {mayninchaynin} "["  "NRoot" "]" "["  "=de_vez_en_cuando" "]" ] :  {mayninchaynin}
+| [ {mayninchaynin} "["  "NRoot" "]" "["  "=de_vez_en_cuando" "]" ] :  {maynichaynin}
+| [ {sulpay} "["  "NRoot" "]" "["  "=gracias" "]" ] :  {sulpay}
+;

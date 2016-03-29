@@ -1,0 +1,42 @@
+# translations with "="	# translations with "="
+	
+  [ {achkha} "[" "NRoot" "]" "["  "=mucho" "]" ] :  {achka}
+| [ {achkha} "[" "NRoot" "]" "["  "=mucho" "]" ] :  {achkha}
+| [ {achkha} "[" "NRoot" "]" "["  "=mucho" "]" ] :  {ashkha}
+| [ {achkha} "[" "NRoot" "]" "["  "=mucho" "]" ] :  {askha}
+| [ {achkha} "[" "NRoot" "]" "["  "=mucho" "]" ] :  {ashka}
+| [ {achkha} "[" "NRoot" "]" "["  "=mucho" "]" ] :  {asqha}
+| [ {achkha} "[" "NRoot" "]" "["  "=mucho" "]" ] :  {ashkhas}
+| [ {achkhap} "[" "NRoot" "]" "["  "=abundante" "]" ] :  {achkaq}
+| [ {achkhap} "[" "NRoot" "]" "["  "=abundante" "]" ] :  {achkhaq}
+| [ {achkhap} "[" "NRoot" "]" "["  "=abundante" "]" ] :  {ashkhaq}
+| [ {achkhap} "[" "NRoot" "]" "["  "=abundante" "]" ] :  {askhaq}
+| [ {achkhap} "[" "NRoot" "]" "["  "=abundante" "]" ] :  {ashkaq}
+| [ {allapa} "[" "NRoot" "]" "["  "=mucho" "]" ] :  {allapa}
+| [ {ancha} "[" "NRoot" "]" "["  "=muy,mucho" "]" ] :  {ancha}
+| [ {as} "[" "NRoot" "]" "["  "=poco" "]" ] :  {as}
+| [ {aswan} "[" "NRoot" "]" "["  "=más,mucho" "]" ] :  {aswan}
+| [ {chhika} "[" "NRoot" "]" "["  "=mucho,tanto" "]" ] :  {chhika}
+| [ {chhika} "[" "NRoot" "]" "["  "=mucho,tanto" "]" ] :  {chika}
+| [ {hayk'a}"[" "NRoot" "]" "["  "=varios" "]" ] :  {hayka}
+| [ {hayk'a}"[" "NRoot" "]" "["  "=varios" "]" ] :  {jayka}
+| [ {hayk'a} "[" "NRoot" "]" "["  "=varios" "]" ] :  {hayk'a}
+| [ {jayk'a} "[" "NRoot" "]" "["  "=varios" "]" ] :  {jayk'a}
+| [ {limpu} "[" "NRoot" "]" "["  "=todo" "]" ] :  {limpu}
+| [ {llapa} "[" "NRoot" "]" "["  "=todo" "]" ] :  {llapa}
+| [ {llipi} "[" "NRoot" "]" "["  "=todo" "]" ] :  {llipi}
+| [ {lliw} "[" "NRoot" "]" "["  "=todo" "]" ] :  {lliw}
+| [ {lluy} "[" "NRoot" "]" "["  "=todo" "]" ] :  {lluy}
+| [ {llumpay} "[" "NRoot" "]" "["  "=mucho" "]" ] :  {llumpay}
+| [ {mayqin} "[" "NRoot" "]" "["  "=algún" "]" ] :  {mayqin}
+| [ {pisi} "[" "NRoot" "]" "["  "=poco" "]" ] :  {pisi}
+| [ {tukuy} "[" "NRoot" "]" "["  "=todo,total,cada" "]" ] :  {tukuy}
+#| [ {tumpa} "[" "NRoot" "]" "["  "=poco" "]" ] :  {tumpa}
+| [ {waki} "[" "NRoot" "]" "["  "=parte,otro" "]" ] :  {waki}
+| [ {wallka} "[" "NRoot" "]" "["  "=poco" "]" ] :  {wallka}
+| [ {wallku} "[" "NRoot" "]" "["  "=poco" "]" ] :  {wallku}
+| [ {llumpay} "[" "NRoot" "]" "["  "=todo" "]" ] :  {yumpay}
+| [ {yupa} "[" "NRoot" "]" "["  "=mucho" "]" ] :  {yupa}
+| [ {menos} "[" "NRoot" "]" "["  "=menos" "]" ] :  {menos}
+
+;

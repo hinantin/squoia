@@ -1,0 +1,27 @@
+# person pronouns
+
+  [ {ñuqa} "[" "PrnPers+1.Sg" "]" "@HUM"] : {ñuqa}
+| [ {ñuqa} "[" "PrnPers+1.Sg" "]" "@HUM"] : {nuqa}
+| [ {ñuqa} "[" "PrnPers+1.Sg" "]" "[" "^DB" "]" "[" "--" "]" {lla} "[" "Amb" "]" "[" "+Lim_Aff" "]" "[" "^DB" "]" "[" "--" "]" {y} "[" "NPers" "]" "[" "+1.Sg.Poss" "]" "@HUM"] : {ñuqallay}
+| [ {ñuqa} "[" "PrnPers+1.Sg" "]" "[" "^DB" "]" "[" "--" "]" {lla} "[" "Amb" "]" "[" "+Lim_Aff" "]" "[" "^DB" "]" "[" "--" "]" {y} "[" "NPers" "]" "[" "+1.Sg.Poss" "]" "@HUM"] : {nuqallay}
+| [ {qam} "[" "PrnPers+2.Sg" "]" "@HUM"] : {qam}
+| [ {qam} "[" "PrnPers+2.Sg" "]" "@HUM"] : {qan}
+| [ {pay} "[" "PrnPers+3.Sg" "]" "@HUM"] : {pay}
+| [ {payllay} "[" "PrnPers+Lim+3.Sg" "]" "@HUM"] : {payllay}
+| [ {ñuqanchik} "[" "PrnPers+1.Pl.Incl" "]" "@HUM"] : {nuqanchis}
+| [ {ñuqanchik} "[" "PrnPers+1.Pl.Incl" "]" "@HUM"] : {nuqanchik}
+| [ {ñuqanchik} "[" "PrnPers+1.Pl.Incl" "]" "@HUM"] : {nuqanchiq}
+| [ {ñuqanchik} "[" "PrnPers+1.Pl.Incl" "]" "@HUM"] : {ñuqanchis}
+| [ {ñuqanchik} "[" "PrnPers+1.Pl.Incl" "]" "@HUM"] : {ñuqanchik}
+| [ {ñuqanchik} "[" "PrnPers+1.Pl.Incl" "]" "@HUM"] : {ñuqanchiq}
+| [ {ñuqallanchik} "[" "PrnPers+Lim+1.Pl.Incl" "]" "@HUM"] : {nuqallanchis}
+| [ {ñuqallanchik} "[" "PrnPers+Lim+1.Pl.Incl" "]" "@HUM"] : {nuqallanchik}
+| [ {ñuqallanchik} "[" "PrnPers+Lim+1.Pl.Incl" "]" "@HUM"] : {nuqallanchiq}
+| [ {ñuqallanchik} "[" "PrnPers+Lim+1.Pl.Incl" "]" "@HUM"] : {ñuqallanchis}
+| [ {ñuqallanchik} "[" "PrnPers+Lim+1.Pl.Incl" "]" "@HUM"] : {ñuqallanchik}
+| [ {ñuqallanchik} "[" "PrnPers+Lim+1.Pl.Incl" "]" "@HUM"] : {ñuqallanchiq}
+| [ {ñuqayku} "[" "PrnPers+1.Pl.Excl" "]" "@HUM"] : {ñuqayku}
+| [ {ñuqayku} "[" "PrnPers+1.Pl.Excl" "]" "@HUM"] : {nuqayku}
+| [ {ñuqallayku} "[" "PrnPers+Lim+1.Pl.Excl" "]" "@HUM"] : {ñuqallayku}
+| [ {ñuqallayku} "[" "PrnPers+Lim+1.Pl.Excl" "]" "@HUM"] : {nuqallayku}
+;
