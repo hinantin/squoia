@@ -1,3 +1,16 @@
+### The Squoia Repository
+
+The contents of this repository was forked fs rom the Squoia Repository, you can cite this work as following:
+
+```
+@phdthesis{rios2015basic,
+  title={A Basic Language Technology Toolkit for Quechua},
+  author={Rios, Annette},
+  year={2015},
+  school={University of Zurich}
+}
+```
+
 ### Hinantin
 
 This version needs eXist-db to be installed in order for it to work appropriately. See the file <path_to_squoia>/eXist-db.md.
