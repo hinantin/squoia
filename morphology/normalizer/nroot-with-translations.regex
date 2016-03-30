@@ -2442,7 +2442,7 @@
 | [ {uqa} "[" "NRoot" "]" "["  "=oca" "]" ] : {uqa}
 | [ {uqi} "[" "NRoot" "]" "["  "=plomo" "]" ] : {uqhi}
 | [ {uqhu} "[" "NRoot" "]" "["  "=pantano,mojado" "]" ] : {uqhu}
-| [ {uqhu} "[" "NRoot" "]" "["  "=pantano,mojado" "]" ] : {uqu}
+| [ {uqhu} "[" "NRoot" "]" "["  "=pantano,mojado" "]" ] : {uqu} # Source AMLQ dictionary and Peruvian Education Ministry Dictionary
 | [ {uqi} "[" "NRoot" "]" "["  "=plomo" "]" ] : {uqi}
 | [ {uqsa} "[" "NRoot" "]" "["  "=paja" "]" ] : {uqsa}
 | [ {uqu} "[" "NRoot" "]" "["  "=gordo" "]" ] : {uqu}
