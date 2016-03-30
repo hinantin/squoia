@@ -1,6 +1,6 @@
 ### The Squoia Repository
 
-The contents of this repository was forked fs rom the Squoia Repository, you can cite this work as following:
+The contents of this repository were forked fs rom the Squoia Repository, you can cite this work as following:
 
 ```
 @phdthesis{rios2015basic,
