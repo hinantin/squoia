@@ -13,7 +13,7 @@ The contents of this repository were forked from the Squoia Repository, you can 
 
 ### Hinantin
 
-This version needs eXist-db to be installed in order for it to work appropriately. See the file <path_to_squoia>/eXist-db.md.
+This version needs eXist-db to be installed in order for it to work appropriately. See the file `<SQUOIA_PATH>/eXist-db.md`.
 
 ### Linguistic Resources used in this project
 
