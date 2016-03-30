@@ -45,6 +45,8 @@ Every verb comes in its own xml file, in order to read them into a hash, import 
 
 We assume that you have obtained a copy of AncoraLex and that it is located in `<SQUOIA_PATH>/ancoralex-2.0.3`, so let's proceed to log into eXist-db create the collections as follos and import all .xml files within `<SQUOIA_PATH>/ancoralex-2.0.3/ancora-verb-es` folder.
 
+Create the collection
+
 ```
 $ sudo bash /usr/share/eXist/bin/client.sh -u admin -P admin
 --no-gui -u admin -P admin
@@ -53,7 +55,6 @@ eXist version 2.2 (master-5c5aadc), Copyright (C) 2001-2015 The eXist-db Project
 eXist-db comes with ABSOLUTELY NO WARRANTY.
 This is free software, and you are welcome to redistribute it
 under certain conditions; for details read the license file.
-
 
 type help or ? for help.
 exist:/db>mkcol MT_Systems
@@ -64,4 +65,9 @@ exist:/db/MT_Systems/ancoralex>mkcol 'verb-es'
 exist:/db/MT_Systems/ancoralex>quit
 ```
 
+Importing files from the command line:
+
+```
+$ sudo bash /usr/share/eXist/bin/client.sh -u admin -P admin -m /db/MT_Systems/ancoralex/verb-es -p <SQUOIA_PATH>/ancoralex-2.0.3/ancora-verb-es
+```
 
