@@ -30,4 +30,4 @@ Taulé, M., M.A. Martí, M. Recasens (2009).
 Unfortunately, Ancora is not freely available, you have to register to download the resource. 
 Every verb comes in its own xml file, in order to read them into a hash, import them into eXist-db:
 
-
+We assume that you have obtained a copy of AncoraLex and that it is located in `<SQUOIA_PATH>/ancoralex-2.0.3`
