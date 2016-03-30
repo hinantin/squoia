@@ -6,10 +6,7 @@ This version needs eXist-db to be installed in order for it to work appropriatel
 
 #### `<SQUOIA_PATH>`
 
-`<SQUOIA_PATH>` is used throughout this manual to refer to 
-the path where you have downloaded the contents of the squoia repository, in my case 
-the path is `/home/richard/Documents/squoia`. You should change this to 
-adjust it to your own environment.
+`<SQUOIA_PATH>` is used throughout this manual to refer to the path where you have downloaded the contents of the squoia repository, in my case the path is `/home/richard/Documents/squoia`. You should change this to adjust it to your own environment.
 
 #### Lexica
 
