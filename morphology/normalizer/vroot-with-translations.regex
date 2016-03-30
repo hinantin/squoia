@@ -1494,6 +1494,7 @@
 | [ {suqa} "[" "VRoot" "]" "[" "=silbar" "]" ] :  {suqa}
 | [ {suq'a} "[" "VRoot" "]" "[" "=azotar" "]" ] :  {suq'a}
 | [ {suq'u} "[" "VRoot" "]" "[" "=chupar" "]" ] :  {suq'u}
+| [ {suq'u} "[" "VRoot" "]" "[" "=chupar" "]" ] :  {suqu} # taken from Ayacucho Quechua 
 | [ {suskhu} "[" "VRoot" "]" "[" "=entrar_o_salir_con_dificultad,escabullirse" "]" ] :  {suskhu}
 | [ {susuna} "[" "VRoot" "]" "[" "=adormecerse" "]" ] :  {susuna}
 | [ {susunka} "[" "VRoot" "]" "[" "=entumecer,adormecerse" "]" ] :  {susunka}
