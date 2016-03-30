@@ -71,3 +71,17 @@ Importing files from the command line:
 $ sudo bash /usr/share/eXist/bin/client.sh -u admin -P admin -m /db/MT_Systems/ancoralex/verb-es -p <SQUOIA_PATH>/ancoralex-2.0.3/ancora-verb-es
 ```
 
+and then use the scripts located in the path `<SQUOIA_PATH>/MT_systems/utilities` to store the list of nouns and verbs into a hash file.
+
+In order to obtain the noun hash file run the folowing command:
+
+```
+$ perl <SQUOIA_PATH>/MT_systems/utilities/readInSemanticDix.pl <SQUOIA_PATH>/MT_systems/materiales.txt
+```
+
+To get the verb hash file run this command:
+
+```
+$ perl <SQUOIA_PATH>/MT_systems/utilities/readInSemanticDixFromeXistdb.pl 
+```
+
