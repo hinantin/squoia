@@ -2441,7 +2441,8 @@
 | [ {upi} "[" "NRoot" "]" "["  "=chicha" "]" ] : {upi}
 | [ {uqa} "[" "NRoot" "]" "["  "=oca" "]" ] : {uqa}
 | [ {uqi} "[" "NRoot" "]" "["  "=plomo" "]" ] : {uqhi}
-| [ {uqhu} "[" "NRoot" "]" "["  "=pantano" "]" ] : {uqhu}
+| [ {uqhu} "[" "NRoot" "]" "["  "=pantano,mojado" "]" ] : {uqhu}
+| [ {uqhu} "[" "NRoot" "]" "["  "=pantano,mojado" "]" ] : {uqu}
 | [ {uqi} "[" "NRoot" "]" "["  "=plomo" "]" ] : {uqi}
 | [ {uqsa} "[" "NRoot" "]" "["  "=paja" "]" ] : {uqsa}
 | [ {uqu} "[" "NRoot" "]" "["  "=gordo" "]" ] : {uqu}
