@@ -63,10 +63,10 @@ my $dom    = XML::LibXML->load_xml( IO => *STDIN );
 foreach my $section ($dom->getElementsByTagName('section')){
     my $translated =0;
     my $untranslated =0;
-  
-    my @entries = $section->findnodes('child::e');
+  print "section\n";
+    my @entriess = $section->findnodes('child::e');
      my %entries = [];
-      foreach my $e (@entries){
+      foreach my $e (@entriess){
 	      my ($r) = $e->findnodes('child::p/r[1]');
 	      if($entries{$e}){
 		      push($entries{$e}, $r);

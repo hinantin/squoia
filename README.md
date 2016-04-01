@@ -49,14 +49,7 @@ Create the collection
 
 ```
 $ sudo bash /usr/share/eXist/bin/client.sh -u admin -P admin
---no-gui -u admin -P admin
-Using locale: en_US.UTF-8
-eXist version 2.2 (master-5c5aadc), Copyright (C) 2001-2015 The eXist-db Project
-eXist-db comes with ABSOLUTELY NO WARRANTY.
-This is free software, and you are welcome to redistribute it
-under certain conditions; for details read the license file.
 
-type help or ? for help.
 exist:/db>mkcol MT_Systems
 exist:/db>cd MT_Systems
 exist:/db/MT_Systems>mkcol ancoralex
@@ -84,4 +77,27 @@ To get the verb hash file run this command:
 ```
 $ perl <SQUOIA_PATH>/MT_systems/utilities/readInSemanticDixFromeXistdb.pl 
 ```
+
+### Importing the dictionaries into eXist-db
+
+Create the collection
+
+```
+$ sudo bash /usr/share/eXist/bin/client.sh -u admin -P admin
+
+exist:/db>cd MT_Systems
+exist:/db/MT_Systems>mkcol squoia
+exist:/db/MT_Systems>cd squoia
+exist:/db/MT_Systems/squoia>mkcol esqu
+exist:/db/MT_Systems/squoia>cd esqu
+exist:/db/MT_Systems/squoia/esqu>mkcol lexica
+exist:/db/MT_Systems/squoia/esqu>quit
+```
+Import the dictionary
+
+```
+$ sudo bash /usr/share/eXist/bin/client.sh -u admin -P admin -m /db/MT_Systems/squoia/esqu/lexica -p <SQUOIA_PATH>/MT_systems/squoia/esqu/lexica/es-quz.dix
+```
+
+
 
