@@ -64,13 +64,13 @@ foreach my $section ($dom->getElementsByTagName('section')){
     my $translated =0;
     my $untranslated =0;
   print "section\n";
-    my @entriess = $section->findnodes('child::e');
+    my @entries = $section->findnodes('child::e');
      my %entries = [];
-      foreach my $e (@entriess){
+      foreach my $e (@entries){
 	      my ($r) = $e->findnodes('child::p/r[1]');
 	      if($entries{$e}){
 		      push($entries{$e}, $r);
-		# print $e->toString()."\n";
+		 print $e->toString()."\n";
 	      }
 	      else{
 		  $entries{$e} = [$r];
