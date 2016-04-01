@@ -5,8 +5,8 @@ let $results := <results>{
 for $section in $dom//section
   let $r := $section//e//r[1]
   let $total := count($r)
-  let $untranslated := count($r[text() eq 'unspecified'])
-  let $translated := $total - $untranslated
+  let $translated := count($r[string() ne 'unspecified'])
+  let $untranslated := $total - $translated
     return 
         <result section="{data($section//@id)}" entries="{$total}" unspecified="{$untranslated}" translated="{$translated}"/>
 }
