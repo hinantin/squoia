@@ -13,6 +13,7 @@
 | [ {achku} "[" "NRoot" "]" "["  "=leña_menuda" "]" ] : {achku}
 | [ {achupalla} "[" "NRoot" "]" "["  "=piña" "]" ] : {achupalla}
 | [ {achuqalla} "[" "NRoot" "]" "["  "=bolsa,comadreja" "]" ] : {achuqalla}
+| [ {achuqcha} "[" "NRoot" "]" "["  "=caigua" "]" ] : {achuqcha} # achojcha, achoqcha
 | [ {achura} "[" "NRoot" "]" "["  "=cuota,ración" "]" ] : {achura}
 | [ {ahalla} "[" "NRoot" "]" "["  "=rápido" "]" ] : {ahalla}
 | [ {ahina} "[" "NRoot" "]" "["  "=ejemplo" "]" ] : {ahina}
@@ -838,6 +839,7 @@
 | [ {k'ayra} "[" "NRoot" "]" "["  "=rana" "]" ] : {kayra}
 | [ {k'ayrapin} "[" "NRoot" "]" "["  "=brazo" "]" ] : {k'ayrapin}
 | [ {k'ayrapin} "[" "NRoot" "]" "["  "=brazo" "]" ] : {kayrapin}
+| [ {kaywa} "[" "NRoot" "]" "["  "=caigua" "]" ] : {kaywa}
 | [ {khacha} "[" "NRoot" "]" "["  "=encallecido" "]" ] : {khacha}
 | [ {khachu} "[" "NRoot" "]" "["  "=mordisco" "]" ] : {khachu}
 | [ {khaha} "[" "NRoot" "]" "["  "=brasa" "]" ] : {khaha}
