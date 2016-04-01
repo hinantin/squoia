@@ -101,5 +101,9 @@ Import the dictionary
 $ sudo bash /usr/share/eXist/bin/client.sh -u admin -P admin -m /db/MT_Systems/squoia/esqu/lexica -p <SQUOIA_PATH>/MT_systems/squoia/esqu/lexica/es-quz.dix
 ```
 
+Testing the dictionary
 
+```
+$ sudo bash /usr/share/eXist/bin/client.sh -F <SQUOIA_PATH>/MT_systems/squoia/esqu/lexica/count_dix_entries.xq
+```
 
