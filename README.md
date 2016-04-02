@@ -50,7 +50,7 @@ We assume that you have obtained a copy of AncoraLex and that it is located in `
 Create the collection
 
 ```
-$ sudo bash /usr/share/eXist/bin/client.sh -u admin -P admin
+$ sudo bash /usr/share/eXist/bin/client.sh -ouri=xmldb:exist://host:8081/exist/xmlrpc -u admin -P admin
 
 exist:/db>mkcol MT_Systems
 exist:/db>cd MT_Systems
