@@ -22,7 +22,6 @@ if (!defined $dixfile) {
  print STDERR " Usage:  $0 [--dix DIX_FILE_PATH] \n";	
  exit;
 }
-else { print "$dixfile"; }
 
 my $totalentries =0;
 my $totalunspec =0;

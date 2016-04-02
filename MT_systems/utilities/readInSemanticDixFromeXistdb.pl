@@ -6,12 +6,8 @@ use XML::LibXML;
 use utf8;                  # Source code is UTF-8
 use open ':utf8';
 use Storable; # to retrieve hash from disk
-# Execute an XQuery through XML-RPC. The query is passed
-# to the "executeQuery" method, which returns a handle to
-# the created result set. The handle can then be used to
-# retrieve results.
 
-$query = <<END;
+my $query = <<END;
 let \$documents := '/db/MT_Systems/ancoralex/verb-es'
 for \$doc in collection(\$documents)
 for \$lexentry in \$doc//lexentry
@@ -34,7 +30,7 @@ $vars = RPC::XML::struct->new('query' => 'corrupt*');
 $options = RPC::XML::struct->new(
     'indent' => 'yes', 
     'encoding' => 'UTF-8',
-	'variables' => $vars
+    'variables' => $vars
 );
 
 $URL = "http://admin:admin\@localhost:8081/exist/xmlrpc";
@@ -55,11 +51,9 @@ $resp = process($req);
 $hits = $resp->value;
 print "Found $hits hits.\n";
 my %lexEntriesWithFrames = ();
-# Retrieve query results 1 to 10
 for($i = 1; $i < $hits && $i < $hits; $i++) {
     $req = RPC::XML::request->new("retrieve", $result_id, $i, $options);
     $resp = process($req);
-    #print $resp->value . "\n";
     my $dom    = XML::LibXML->load_xml( string => $resp->value );
     my @typesList = $dom->getElementsByTagName('type');
 

@@ -6,17 +6,21 @@ use Storable; # to retrieve hash from disk
 #binmode STDIN, ':utf8';
 #binmode STDOUT, ':utf8';
 use strict;
+use Getopt::Long qw(GetOptions);
 
-my $num_args = $#ARGV + 1;
-if ($num_args != 1) {
-  print "\nUsage:  perl readInSemanticDix.pl path-to-noun-lexicon (lemma:tag)\n";
+my $nounlex;
+my $options = "[--noun-lex path-to-noun-lexicon (lemma:tag)]";
+
+GetOptions (
+'noun-lex=s' => \$nounlex,
+) or die " Usage: $0 $options\n";
+
+if (!defined $nounlex) {
+  print STDERR " Usage: $0 $options\n";
   exit;
 }
 
-my $nounLex = $ARGV[1];
-
-open NOUNS, "< $nounLex" or die "Can't open $nounLex : $!";
-
+open NOUNS, "< $nounlex" or die "Can't open $nounlex : $!";
 my %nounLex = ();
 
 while(<NOUNS>)
