@@ -1,11 +1,25 @@
 #!/usr/bin/perl
 
+use strict;
+use utf8; # Source code is UTF-8
+use open ':utf8';
 use RPC::XML;
 use RPC::XML::Client;
 use XML::LibXML;
-use utf8;                  # Source code is UTF-8
-use open ':utf8';
 use Storable; # to retrieve hash from disk
+use Config::IniFiles;
+use Getopt::Long qw(GetOptions);
+
+my $configfile;
+my $options = "[--config-file path-to-config-file]";
+GetOptions (
+'config-file=s' => \$configfile,
+) or die " Usage: $0 $options\n";
+
+if (!defined $configfile) {
+  print STDERR " Usage: $0 $options\n";
+  exit;
+}
 
 my $query = <<END;
 let \$documents := '/db/MT_Systems/ancoralex/verb-es'
@@ -25,33 +39,42 @@ for \$lexentry in \$doc//lexentry
 END
 
 # user-supplied variables
-$vars = RPC::XML::struct->new('query' => 'corrupt*');
+my $vars = RPC::XML::struct->new('query' => 'corrupt*');
 # Output options
-$options = RPC::XML::struct->new(
+my $options = RPC::XML::struct->new(
     'indent' => 'yes', 
-    'encoding' => 'UTF-8',
+    'encoding' => 'UTF-8', 
     'variables' => $vars
 );
 
-$URL = "http://admin:admin\@localhost:8081/exist/xmlrpc";
+my $CONFIG = Config::IniFiles->new( -file => $configfile );
+my $host = $CONFIG->val( 'EXISTDBDATABASE', 'HOST' );
+my $port = $CONFIG->val( 'EXISTDBDATABASE', 'PORT' );
+my $user = $CONFIG->val( 'EXISTDBDATABASE', 'USER' );
+my $password = $CONFIG->val( 'EXISTDBDATABASE', 'PASSWORD' );
+
+my $URL = "http://$user:$password\@$host:$port/exist/xmlrpc";
 print "connecting to $URL...\n";
-$client = new RPC::XML::Client $URL;
+my $client = new RPC::XML::Client $URL;
 
 # Execute the query. The method call returns a handle
 # to the created result set.
-$req = RPC::XML::request->new("executeQuery", 
+my $req = RPC::XML::request->new(
+    "executeQuery", 
     RPC::XML::base64->new($query), 
-	"UTF-8", $options);
-$resp = process($req);
-$result_id = $resp->value;
+    "UTF-8", 
+    $options
+);
+my $resp = process($req);
+my $result_id = $resp->value;
 
 # Get the number of hits in the result set
 $req = RPC::XML::request->new("getHits", $result_id);
 $resp = process($req);
-$hits = $resp->value;
+my $hits = $resp->value;
 print "Found $hits hits.\n";
 my %lexEntriesWithFrames = ();
-for($i = 1; $i < $hits && $i < $hits; $i++) {
+for(my $i = 1; $i < $hits && $i < $hits; $i++) {
     $req = RPC::XML::request->new("retrieve", $result_id, $i, $options);
     $resp = process($req);
     my $dom    = XML::LibXML->load_xml( string => $resp->value );
@@ -78,8 +101,8 @@ process($req);
 
 # Send the request and check for errors
 sub process {
-    my($request) = @_;
-    $response = $client->send_request($request);
+    my ($request) = @_;
+    my $response = $client->send_request($request);
     if($response->is_fault) {
         die "An error occurred: " . $response->string . "\n";
     }
