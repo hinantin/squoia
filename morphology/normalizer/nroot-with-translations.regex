@@ -1096,7 +1096,7 @@
 | [ {lat'u} "[" "NRoot" "]" "["  "=lento" "]" ] : {lat'u}
 | [ {lat'u} "[" "NRoot" "]" "["  "=lento" "]" ] : {latu}
 | [ {laususi} "[" "NRoot" "]" "["  "=hijastra" "]" "@HUM" ] : {laususi}
-| [ {lawa} "[" "NRoot" "]" "["  "=mazamorra" "]" ] : {lawa}
+| [ {lawa} "[" "NRoot" "]" "["  "=mazamorra,lagua" "]" ] : {lawa}
 | [ {lawawqi} "[" "NRoot" "]" "["  "=hermanastro" "]" "@HUM" ] : {lawawqi}
 | [ {laya} "[" "NRoot" "]" "["  "=calidad" "]" ] : {laya}
 | [ {layaya} "[" "NRoot" "]" "["  "=padrastro" "]" "@HUM" ] : {layaya}
