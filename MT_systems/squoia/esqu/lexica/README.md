@@ -1,3 +1,7 @@
+### Performance comparison between `XML::LibXML` and `eXist-db` 
+
+As we will see in this test, the query executed on eXist-db takes less than 1% of the time that the XML::LibXML script to show the same results on a machine with an i7 processor with 3GB of RAM.
+
 ```
 $ time cat es-quz.dix | perl count_dix_entries.pl
 section
@@ -129,4 +133,8 @@ perl count_dix_entries.pl  398.66s user 126.97s system 83% cpu 10:32.52 total
 </results>
 </query>
 Query returned 1 item(s) in 3.52s
+Query returned 1 item(s) in 2.8s
+
+Average: 3.16s
 ```
+
