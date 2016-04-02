@@ -12,7 +12,7 @@ for $section in $dom//section
 }
 </results>
 
-return <query>
+return <count>
     <total totalentries="{sum($results//result//@entries)}" totalunspecified="{sum($results//result//@unspecified)}" totaltranslated="{sum($results//result//@translated)}" />
     {$results}
-    </query>
+    </count>
