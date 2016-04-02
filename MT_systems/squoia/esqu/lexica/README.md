@@ -105,6 +105,9 @@ number of entries with no translation: 66865
 
 cat es-quz.dix  0.00s user 0.01s system 1% cpu 0.746 total
 perl count_dix_entries.pl  398.66s user 126.97s system 83% cpu 10:32.52 total
+
+perl count_dix_entries.pl --dix es-quz.dix  305.72s user 129.82s system 81% cpu 8:55.05 total
+
 ```
 
 ```

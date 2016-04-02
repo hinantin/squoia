@@ -8,16 +8,28 @@
 use strict;
 use utf8;
 use XML::LibXML;
+use Getopt::Long qw(GetOptions);
 #use DateTime;
 
 #use POSIX qw/strftime/;
 #my $date = strftime "%Y-%m-%d", localtime;
 
+my $dixfile;
+GetOptions (
+'dix=s' => \$dixfile,
+) or die " Usage:  $0 [--dix DIX_FILE_PATH] \n";
+if (!defined $dixfile) {
+ print STDERR " Usage:  $0 [--dix DIX_FILE_PATH] \n";	
+ exit;
+}
+else { print "$dixfile"; }
+
 my $totalentries =0;
 my $totalunspec =0;
 my $totaltranslated =0;
 
-my $dom    = XML::LibXML->load_xml( IO => *STDIN );
+open (FILE, "<", $dixfile) or die "Can't open file \"$dixfile\": $!\n";
+my $dom = XML::LibXML->load_xml( IO => *FILE );
 
  # foreach my $section ($dom->getElementsByTagName('section'))
 #     {
