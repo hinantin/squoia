@@ -111,7 +111,7 @@ perl count_dix_entries.pl --dix es-quz.dix  305.72s user 129.82s system 81% cpu 
 ```
 
 ```
-<query>
+<count>
 <total totalentries="85663" totalunspecified="66865" totaltranslated="18798"/>
 <results>
 <result section="numbers" entries="30" unspecified="0" translated="30"/>
@@ -134,7 +134,7 @@ perl count_dix_entries.pl --dix es-quz.dix  305.72s user 129.82s system 81% cpu 
 <result section="interjections_spanish" entries="113" unspecified="0" translated="113"/>
 <result section="adverbs_unknown" entries="79" unspecified="79" translated="0"/>
 </results>
-</query>
+</count>
 Query returned 1 item(s) in 3.52s
 Query returned 1 item(s) in 2.8s
 
