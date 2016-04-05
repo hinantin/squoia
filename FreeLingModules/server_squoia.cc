@@ -529,8 +529,8 @@ int main (int argc, char **argv) {
   util::init_locale(cfg->Locale);
 
   // create input/output handlers appropriate for requested type of input/output.
-  output_handler *out = create_output_handler(cfg);
-  input_handler *inp = create_input_handler(cfg);
+  freeling::io::output_handler *out = create_output_handler(cfg);
+  freeling::io::input_handler *inp = create_input_handler(cfg);
 
   // create lang ident or analyzer, depending on requested output
   lang_ident *ident=NULL;

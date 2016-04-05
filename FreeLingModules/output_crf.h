@@ -14,6 +14,7 @@
 
 using namespace std;
 using namespace freeling;
+using namespace freeling::io;
 
 class output_crf : public output_handler {
 
