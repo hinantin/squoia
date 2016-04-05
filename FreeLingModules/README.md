@@ -19,6 +19,9 @@ g++ -std=gnu++11 -c  -o server_squoia.o server_squoia.cc -I/home/richard/Downloa
 kitt:
 g++ -std=gnu++11 -c  -o server_squoia.o server_squoia.cc -I/opt/matxin/local/include/ -I/mnt/storage/hex/projects/clsquoia/arios_squoia_git/FreeLingModules/config_squoia/
 
+hinantin:
+g++ -std=gnu++0x -c -o server_squoia.o server_squoia.cc -I/usr/local/include -I/home/richard/Documents/squoia/FreeLingModules/config_squoia/ -I/home/richard/Downloads/01_Instaladores/freeling/FreeLing-4.0-beta1/src/libfoma -I/home/richard/Downloads/01_Instaladores/freeling/FreeLing-4.0-beta1/src/libtreeler
+
 lokal:
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/squoia/lib
 g++ -O3 -Wall -o server_squoia server_squoia.o output_crf.o -L/opt/squoia/lib -lfreeling -lboost_program_options -lboost_system -lboost_filesystem -lpthread 
