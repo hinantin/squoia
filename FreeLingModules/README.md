@@ -1,19 +1,21 @@
-
-
 ### Freeling analyzer with crf output format for wapiti:
+
+Locate where the `/usr/local/include/freeling/morfo/configfile.h` is:
+
  local:
-g++ -c -o output_crf.o output_crf.cc -I/opt/squoia/include/ -I/opt/squoia/squoia/FreeLingModules/config_squoia/
+g++ -c -o output_crf.o output_crf.cc -I/home/richard/Downloads/01_Instaladores/freeling/freeling_github/src/include -I/home/richard/Documents/squoia/FreeLingModules/config_squoia/
  kitt:
 g++ -c -o output_crf.o output_crf.cc -I/opt/matxin/local/include/ -I/mnt/storage/hex/projects/clsquoia/arios_squoia_git/FreeLingModules/config_squoia/
 
 
 lokal:
-g++ -c -o analyzer_client.o analyzer_client.cc -I/opt/squoia/include/ -I/opt/squoia/squoia/FreeLingModules/config_squoia/ 
+g++ -c -o analyzer_client.o analyzer_client.cc -I/home/richard/Downloads/01_Instaladores/freeling/freeling_github/src/include -I/home/richard/Documents/squoia/FreeLingModules/config_squoia/ 
 kitt:
 g++ -c -o analyzer_client.o analyzer_client.cc -I/opt/matxin/local/include/ -I/mnt/storage/hex/projects/clsquoia/arios_squoia_git/FreeLingModules/config_squoia/
 
 lokal:
-g++ -std=gnu++11 -c  -o server_squoia.o server_squoia.cc -I/opt/squoia/include/ -I/opt/squoia/squoia/FreeLingModules/config_squoia/
+g++ -std=gnu++11 -c  -o server_squoia.o server_squoia.cc -I/home/richard/Downloads/01_Instaladores/freeling/freeling_github/src/include -I/home/richard/Documents/squoia/FreeLingModules/config_squoia/ -I/home/richard/Downloads/01_Instaladores/freeling/freeling_github/src/libfoma -I/home/richard/Downloads/01_Instaladores/freeling/freeling_github/src/libtreeler
+
 kitt:
 g++ -std=gnu++11 -c  -o server_squoia.o server_squoia.cc -I/opt/matxin/local/include/ -I/mnt/storage/hex/projects/clsquoia/arios_squoia_git/FreeLingModules/config_squoia/
 

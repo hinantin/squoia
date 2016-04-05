@@ -491,8 +491,10 @@ class config {
  private:
     
   void SetBooleanOptionCL (const int pos, const int neg, bool &opt, const std::string &name) {
-    if (pos && neg)  
+    if (pos && neg) {
+      opt=false;
       WARNING(L"Ambiguous specification for option --"+util::string2wstring(name)+L" in command line. Using default value.");
+    }
     else if (pos)
       opt=true;
     else if (neg)
