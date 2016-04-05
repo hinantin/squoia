@@ -1,10 +1,10 @@
 ### Freeling analyzer with crf output format for wapiti:
 
-Locate where the `/usr/local/include/freeling/morfo/configfile.h` is:
+Locate where the `/usr/local/include/freeling` is:
 
- local:
+local:
 g++ -c -o output_crf.o output_crf.cc -I/home/richard/Downloads/01_Instaladores/freeling/freeling_github/src/include -I/home/richard/Documents/squoia/FreeLingModules/config_squoia/
- kitt:
+kitt:
 g++ -c -o output_crf.o output_crf.cc -I/opt/matxin/local/include/ -I/mnt/storage/hex/projects/clsquoia/arios_squoia_git/FreeLingModules/config_squoia/
 
 
