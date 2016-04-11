@@ -109,10 +109,13 @@ $ sudo bash /usr/share/eXist/bin/client.sh -F <SQUOIA_PATH>/MT_systems/squoia/es
 
 ### Start the 3 servers
 
-#### Freeling
+#### Wapiti
+
+Please download this Wapiti version `https://github.com/rcastromamani/Wapiti`, for the official version does not support a server mode as of today.
 
 ```
-$ analyze -f es.cfg --server -p 8866
+$ cd /home/richard/Documents/wapiti
+$ ./wapiti label --server -P --force 8888 -m /home/richard/Documents/squoia/MT_systems/models/3gram_enhancedAncora.model
 ```
 
 #### Squoia Freeling modules
