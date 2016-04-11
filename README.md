@@ -115,7 +115,7 @@ Please download this Wapiti version `https://github.com/rcastromamani/Wapiti`, f
 
 ```
 $ cd /home/richard/Documents/wapiti
-$ ./wapiti label --server -P --force 8888 -m /home/richard/Documents/squoia/MT_systems/models/3gram_enhancedAncora.model
+$ ./wapiti label --server -P 8888 --force -m /home/richard/Documents/squoia/MT_systems/models/3gram_enhancedAncora.model
 ```
 
 #### Squoia Freeling modules
