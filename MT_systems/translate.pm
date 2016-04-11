@@ -10,6 +10,7 @@
 package squoia::translate;
 our $path;
 use utf8;
+use IO::CaptureOutput qw/capture/;
 
 BEGIN{
 
@@ -85,6 +86,7 @@ my $informat = 'senttok'; # TODO: default better be plain..?
 my $wapiti;
 my $wapitiModel;
 my $wapitiPort;
+my $wapitiHost;
 my $freelingPort;
 my $freelingConf;
 my $matxin;
@@ -275,6 +277,7 @@ GetOptions(
 	'wapiti=s'    => \$wapiti,
 	'wapitiModel=s'    => \$wapitiModel,
 	'wapitiPort=i'    => \$wapitiPort,
+	'wapitiHost=s'    => \$wapitiHost,
 	'freelingPort=i'    => \$freelingPort,
 	'freelingConf=s'    => \$freelingConf,
 	'matxin=s'    => \$matxin,
@@ -510,12 +513,13 @@ if($startTrans<$mapInputFormats{'tagged'})	#4)
 	### tagging: if input file given with --file or -f:
 	# check if $matxin,  $wapiti and $wapitiModel are all set, otherwise exit
 	eval{
-		$matxin = $config{'matxin'} unless $matxin; $wapiti = $config{'wapiti'} unless $wapiti; $wapitiModel = $config{'wapitiModel'} unless $wapitiModel; $wapitiPort = $config{'wapitiPort'} unless $wapitiPort;
+		$matxin = $config{'matxin'} unless $matxin; $wapiti = $config{'wapiti'} unless $wapiti; $wapitiModel = $config{'wapitiModel'} unless $wapitiModel; $wapitiPort = $config{'wapitiPort'} unless $wapitiPort; $wapitiHost = $config{'wapitiHost'} unless $wapitiHost;
 	}
 	or die "Tagging failed, location of matxin, wapiti or wapiti model or port not indicated!\n";;
 		#print STDERR "wapiti set as $wapiti, model set as $wapitiModel\n";
 	if($file ne ''){
-		open(CONLL,"-|" ,"cat $file | $matxin/analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel"  ) || die "tagging failed: $!\n";
+		open(CONLL,"-|" ,"cat $file | $matxin/analyzer_client $freelingPort | perl $matxin/wapitiClient.pl --stdin --port $wapitiPort --host $wapitiHost"  ) || die "tagging failed: $!\n";
+#		open(CONLL,"-|" ,"cat $file | $matxin/analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel"  ) || die "tagging failed: $!\n";
 #		open(CONLL,"-|" ,"cat $file | $matxin/analyzer_client $freelingPort | wapiti_client $wapitiPort"  ) || die "tagging failed: $!\n";
 	}
 	# if no file given, expect input on stdin
@@ -524,7 +528,8 @@ if($startTrans<$mapInputFormats{'tagged'})	#4)
 		my $tmp = $path."/tmp/tmp.txt";
 		open (TMP, ">:encoding(UTF-8)", $tmp) or die "Can't open temporary file \"$tmp\" to write: $!\n";
 		while(<>){print TMP $_;}
-		open(CONLL,"-|" ,"cat $tmp | $matxin/analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel"  ) || die "tagging failed: $!\n";
+		open(CONLL,"-|" ,"cat $tmp | $matxin/analyzer_client $freelingPort | perl $matxin/wapitiClient.pl --stdin --port $wapitiPort --host $wapitiHost"  ) || die "tagging failed: $!\n";
+#		open(CONLL,"-|" ,"cat $tmp | $matxin/analyzer_client $freelingPort | $wapiti/wapiti label --force -m $wapitiModel"  ) || die "tagging failed: $!\n";
 #		open(CONLL,"-|" ,"cat $tmp | $matxin/analyzer_client $freelingPort | wapiti_client $wapitiPort"  ) || die "tagging failed: $!\n";
 		close(TMP);
 	}
@@ -552,7 +557,7 @@ if($startTrans<$mapInputFormats{'conll'}){	#5){
 		}
 
 	}
-	else{
+	else {
 		#### convert from wapiti crf to conll for desr parser
 		$conllLines = squoia::crf2conll::main(\*CONLL,$verbose);
 		close(CONLL);
@@ -1864,7 +1869,7 @@ if($startTrans< $mapInputFormats{'words'})
 	if($direction eq 'esqu' && $useMorphModel ==0)
 	{
 
-				open(XFST,"-|" ,"cat $morphfile | lookup -flags xcKv29TT $morphgenerator "  ) || die "morphological generation failed: $!\n";		
+				open(XFST,"-|" ,"cat $morphfile | /usr/bin/lookup -flags xcKv29TT $morphgenerator "  ) || die "morphological generation failed: $!\n";		
 				open (SENT, ">:encoding(UTF-8)", $sentFile) or die "Can't open file \"$sentFile\" to write: $!\n";
 				binmode(XFST, ':utf8');
 				while(<XFST>){
@@ -1900,6 +1905,7 @@ if($startTrans< $mapInputFormats{'words'})
 ###-----------------------------------begin ranking (kenlm) ---------------------------------------------------------####
 ## use kenlm to print the n-best ($nbest) translations	
 print STDERR "* TRANS-STEP " . $mapInputFormats{'nbest'} .")  [-o nbest] n-best translations\n";
+my ($stdout, $stderr);
 if($direction eq 'esqu' && $useMorphModel==0)
 { 
 	# check if quModel is set
@@ -1923,7 +1929,10 @@ if($direction eq 'esqu' && $useMorphModel==0)
 			close(SENT);
 		}
 	}
-	system("$path/squoia/esqu/outputSentences -m $quModel -n $nbest -i $sentFile");
+	capture sub {
+		system("$path/squoia/esqu/outputSentences -m $quModel -n $nbest -i $sentFile");
+	} => \$stdout, \$stderr;
+	print "\n$path/squoia/esqu/outputSentences -m $quModel -n $nbest -i $sentFile\nOUT:\n$stdout\nERROR:\n$stderr";
 }
 elsif($direction eq 'esqu' && $useMorphModel==1)
 {
@@ -1957,7 +1966,10 @@ elsif($direction eq 'esqu' && $useMorphModel==1)
 			close(SENT);
 		}
 	}
-	system("$path/squoia/esqu/outputSentences -l -m $quMorphModel -n $nbest -i $sentFile -f $fomaFST");
+	capture sub {
+		system("$path/squoia/esqu/outputSentences -l -m $quMorphModel -n $nbest -i $sentFile -f $fomaFST");
+	} => \$stdout, \$stderr;
+	print "\n$path/squoia/esqu/outputSentences -l -m $quMorphModel -n $nbest -i $sentFile -f $fomaFST\nOUT:\n$stdout\nERROR:\n$stderr";
 }
 ## de
 elsif($direction eq 'esde'){
