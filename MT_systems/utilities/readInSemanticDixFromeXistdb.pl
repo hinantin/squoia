@@ -11,9 +11,9 @@ use Config::IniFiles;
 use Getopt::Long qw(GetOptions);
 
 my $configfile;
-my $options = "[--config-file path-to-config-file]";
+my $options = "[--config|-c file path-to-config-file]";
 GetOptions (
-'config-file=s' => \$configfile,
+'config-file|c=s' => \$configfile,
 ) or die " Usage: $0 $options\n";
 
 if (!defined $configfile) {
