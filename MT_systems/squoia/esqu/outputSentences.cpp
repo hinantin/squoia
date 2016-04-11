@@ -106,7 +106,8 @@ int main(int argc, char *argv[]) {
 		}
 		// if infile given, read this, if not, read from stdin (default)
 		if (infile != "") {
-			inputFile.exceptions ( std::ifstream::failbit | std::ifstream::badbit );
+			//inputFile.exceptions ( std::ifstream::badbit |  std::ifstream::badbit ); //This line gives a failbit error for any file.
+			inputFile.exceptions ( std::ifstream::badbit );
 			try{
 				inputFile.open(infile.c_str(), std::ifstream::in);
 				pCin = &inputFile;
@@ -129,6 +130,7 @@ int main(int argc, char *argv[]) {
 
 			    		while(std::getline(*pCin,line)){
 			    			if(!line.empty()){
+								//std::cout << "Línea: " << line << "\n" << std::endl;
 			    				// end of sentence, start new one
 			    				if (contains(line, "#EOS")){
 			    					newSentence = 1;
@@ -141,14 +143,13 @@ int main(int argc, char *argv[]) {
 			    					nbrOfAltSents=1;
 			    					//startedWithPunc =0;
 			    					//prev.clear(); prevPunc.clear();
-
+									
 			    				}
 			    				// not at the end of a sentence: get word form(s)
 			    				else{
 			    					erase_all(line,"\t");
 			    					erase_all(line,"\n");
 			    					std::string word = line;
-			    					//std::cout << word << '\n';
 
 			    					//#start a new sentence
 			    					if(newSentence ==1){
@@ -172,6 +173,7 @@ int main(int argc, char *argv[]) {
 			    				}
 			    			}
 			    		}
+			    		//std::cout << "Hola:" << line << "\n" << std::endl;
 			    		inputFile.close();
 			    } else {
 			    	//model type not recognized: abort
@@ -179,7 +181,7 @@ int main(int argc, char *argv[]) {
 			    	exit(0);
 			    }
 			  } catch (const std::exception &e) {
-			    std::cerr << e.what() << std::endl;
+			    std::cerr << "Error: " << e.what() << std::endl;
 			    return 1;
 			  }
 			return 0;
