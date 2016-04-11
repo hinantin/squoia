@@ -107,3 +107,75 @@ Testing the dictionary
 $ sudo bash /usr/share/eXist/bin/client.sh -F <SQUOIA_PATH>/MT_systems/squoia/esqu/lexica/count_dix_entries.xq
 ```
 
+### Start the 3 servers
+
+#### Freeling
+
+```
+$ analyze -f es.cfg --server -p 8866
+```
+
+#### Squoia Freeling modules
+
+```
+$ cd /home/richard/Documents/squoia/FreeLingModules
+$ export FREELINGSHARE=/usr/local/share/freeling
+$ ./server_squoia -f /home/richard/Documents/squoia/FreeLingModules/es_squoia.cfg --server --port=8844 2> logtagging &
+```
+
+#### MaltParser
+
+```
+$ cd /home/richard/Documents/squoia/MT_systems/maltparser_tools/src
+$ java -cp /home/richard/Downloads/01_Instaladores/maltparser-1.8.1/maltparser-1.8.1.jar:. MaltParserServer 1234 /home/richard/Documents/squoia/MT_systems/models/splitDatesModel.mco
+```
+
+#### Testing the translation system
+
+```
+$ cd /home/richard/Documents/squoia/MT_systems
+$ echo "El tiempo nos gana." | perl translate.pm -d esqu -c /home/richard/Documents/squoia/MT_systems/squoia/esqu/es-qu.cfg
+```
+
+#### Matxin
+
+Possible error:
+
+```
+* TRANS-STEP 12)  [-o lextrans] lexical transfer
+/home/richard/Documents/squoia/MT_systems/bin/squoia-xfer-lex: error while loading shared libraries: liblttoolbox3-3.2.so.0: cannot open shared object file: No such file or directory
+Empty Stream at translate.pm line 958
+```
+
+Compile:
+
+```
+$ cd ~/Documents/squoia/MT_systems/matxin-lex
+$ g++ -std=gnu++0x -c -o squoia_xfer_lex.o squoia_xfer_lex.cc -I/usr/local/include/lttoolbox-3.2 -I/usr/local/lib/lttoolbox-3.2/include -I/usr/include/libxml2
+$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+$ g++ -O3 -Wall -o squoia_xfer_lex squoia_xfer_lex.o -L/usr/local/lib -llttoolbox3 -lxml2 -lpcre
+```
+
+#### Checking shared library availability
+
+```
+$ ldconfig -p|grep libboost_regex
+	libboost_regex.so.1.46.1 (libc6,x86-64) => /usr/lib/libboost_regex.so.1.46.1
+	libboost_regex.so (libc6,x86-64) => /usr/lib/libboost_regex.so
+```
+
+```
+# --- Compiled boost library 1.6
+# --- The following directory should be added to compiler include paths:
+# --- /home/richard/Documents/boost_1_60_0
+# --- The following directory should be added to linker library paths:
+# --- /home/richard/Documents/boost_1_60_0/stage/lib
+$ g++ -o test test.cpp -I/home/richard/Documents/boost_1_60_0 -L/home/richard/Documents/boost_1_60_0/stage/lib -lboost_regex
+# --- Compiled executables
+$ LD_LIBRARY_PATH=/home/richard/Documents/boost_1_60_0/stage/lib
+$ export LD_LIBRARY_PATH
+$ ./executable
+# --- Boost library installed by default
+$ g++ -o test test.cpp -I/usr/include -L/usr/lib -lboost_regex
+```
+
