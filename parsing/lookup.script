@@ -1,8 +1,8 @@
-main /mnt/storage/hex/projects/clsquoia/arios_squoia/morphology/normalizer/normalizer.fst
-spanish /mnt/storage/hex/projects/clsquoia/arios_squoia/morphology/normalizer/spanish.fst
-main2 /mnt/storage/hex/projects/clsquoia/arios_squoia/morphology/normalizer/normalizer-relax.fst
-spanish2 /mnt/storage/hex/projects/clsquoia/arios_squoia/morphology/normalizer/spanish-relax.fst
-guesser /mnt/storage/hex/projects/clsquoia/arios_squoia/morphology/normalizer/guesser.fst
+main /home/richard/Documents/Runa_Simi/06_Morphology/normalizer/normalizer.fst
+spanish /home/richard/Documents/Runa_Simi/06_Morphology/normalizer/spanish.fst
+main2 /home/richard/Documents/Runa_Simi/06_Morphology/normalizer/normalizer-relax.fst
+spanish2 /home/richard/Documents/Runa_Simi/06_Morphology/normalizer/spanish-relax.fst
+guesser /home/richard/Documents/Runa_Simi/06_Morphology/normalizer/guesser.fst
 
 main
 spanish
