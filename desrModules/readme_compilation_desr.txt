@@ -19,9 +19,8 @@ g++ -c -o desr_server.o desr_server.cc -std=gnu++0x -I$FREELING/include/ -I$DESR
 #/bin/bash $FREELING_SRC/libtool --tag=CXX --mode=link g++ -O3 -Wall -o desr_server desr_server.o $DESRHOME/src/libdesr.so $DESRHOME/ixe/libixe.a 
 g++ -O3 -Wall -o desr_server desr_server.o $DESRHOME/src/libdesr.so  $DESRHOME/ixe/libixe.a
 
-
 # start the server:
-./desr_server -m $DESRHOME/spanish_es4.MLP --port 5678 2> logdesr_es4 &
+./desr_server -m /home/clsquoia/parser/desr-1.3.2/spanish_es4.MLP --port 5678 2> logdesr_es4 &
 
 # test the client:
 echo "la madre se va. El padre se queda. El hijo duerme." | analyzer_client 8866 | ./desr_client 5678
