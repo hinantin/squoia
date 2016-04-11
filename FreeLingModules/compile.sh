@@ -27,4 +27,12 @@ export FREELINGSHARE=/usr/local/share/freeling
 
 ./server_squoia -f /home/richard/Documents/squoia/FreeLingModules/es_squoia.cfg --server --port=8844 2> logtagging &
 
+echo "esto es mi test" | ./analyzer_client 8844  
 
+# link client and server in MT_systems/bin
+mkdir -p /home/richard/Documents/squoia/MT_systems/bin
+cd /home/richard/Documents/squoia/MT_systems/bin
+ln -s ../../FreeLingModules/analyzer_client analyzer_client
+ln -s ../../FreeLingModules/server_squoia server_squoia
+
+# analyze -f es.cfg --server -p 8866
