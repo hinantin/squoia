@@ -1932,7 +1932,8 @@ if($direction eq 'esqu' && $useMorphModel==0)
 	capture sub {
 		system("$path/squoia/esqu/outputSentences -m $quModel -n $nbest -i $sentFile");
 	} => \$stdout, \$stderr;
-	print "\n$path/squoia/esqu/outputSentences -m $quModel -n $nbest -i $sentFile\nOUT:\n$stdout\nERROR:\n$stderr";
+	# print "\nLLUQSISQA:\n$stdout\nMANA ALLIN LLUQSISQA:\n$stderr";
+	print "$stdout";
 }
 elsif($direction eq 'esqu' && $useMorphModel==1)
 {
@@ -1969,7 +1970,8 @@ elsif($direction eq 'esqu' && $useMorphModel==1)
 	capture sub {
 		system("$path/squoia/esqu/outputSentences -l -m $quMorphModel -n $nbest -i $sentFile -f $fomaFST");
 	} => \$stdout, \$stderr;
-	print "\n$path/squoia/esqu/outputSentences -l -m $quMorphModel -n $nbest -i $sentFile -f $fomaFST\nOUT:\n$stdout\nERROR:\n$stderr";
+	#print "\nLLUQSISQA:\n$stdout\nMANA ALLIN LLUQSISQA:\n$stderr";
+	print "$stdout";
 }
 ## de
 elsif($direction eq 'esde'){

@@ -121,6 +121,17 @@ $ ./wapiti label --server -P 8888 --force -m /home/richard/Documents/squoia/MT_s
 #### Squoia Freeling modules
 
 ```
+# --- Compiling Freeling
+# --- autoreconf -i 
+$ sudo apt-get install autoconf autoconf2.13
+$ sudo apt-get install libboost-dev libboost-regex-dev libicu-dev libboost-system-dev libboost-program-options-dev libboost-thread-dev zlib1g-dev
+$ sudo apt-get install libtool automake libtool zlib1g-dev libboost-dev  libboost-test-dev libboost-system-dev libboost-thread-dev
+
+$ mkdir m4
+$ ./autogen.sh
+$ make install
+
+# --- Running server_squoia 
 $ cd /home/richard/Documents/squoia/FreeLingModules
 $ export FREELINGSHARE=/usr/local/share/freeling
 $ ./server_squoia -f /home/richard/Documents/squoia/FreeLingModules/es_squoia.cfg --server --port=8844 2> logtagging &
@@ -130,7 +141,7 @@ $ ./server_squoia -f /home/richard/Documents/squoia/FreeLingModules/es_squoia.cf
 
 ```
 $ cd /home/richard/Documents/squoia/MT_systems/maltparser_tools/src
-$ java -cp /home/richard/Downloads/01_Instaladores/maltparser-1.8.1/maltparser-1.8.1.jar:. MaltParserServer 1234 /home/richard/Documents/squoia/MT_systems/models/splitDatesModel.mco
+$ java -cp /home/richard/Downloads/01_Instaladores/maltparser-1.8.1/maltparser-1.8.1.jar:. MaltParserServer 1234 /home/richard/Documents/squoia/MT_systems/models/splitDatesModel.mco 2> /home/richard/Documents/squoia/MT_systems/logs/log.malt &
 ```
 
 #### Testing the translation system
