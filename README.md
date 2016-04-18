@@ -107,6 +107,16 @@ Testing the dictionary
 $ sudo bash /usr/share/eXist/bin/client.sh -F <SQUOIA_PATH>/MT_systems/squoia/esqu/lexica/count_dix_entries.xq
 ```
 
+### WordNet:
+
+Download the necessary files from `http://adimen.si.ehu.es/web/MCR`:
+
+```
+spaWN/wei_spa-30_to_ili.tsv
+data/wei_ili_record.tsv
+spaWN/wei_spa-30_variant.tsv
+```
+
 ### Start the 3 servers
 
 #### Wapiti
