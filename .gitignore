@@ -57,3 +57,6 @@ MT_systems/tikrayYana.pl
 
 mirror.sh
 MT_systems/inputsample.txt
+
+MT_systems/squoia/esqu/lexica/es-quz.dix.bak
+runservers.sh
