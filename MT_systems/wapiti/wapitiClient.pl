@@ -28,12 +28,42 @@ if ((not defined $stdin) and (not defined $file)) {
 }
 
 my $text;
-my $buffsize = 16384;
+my $buffsize = 80000;
+my $inputdata = "";
+my $outputdata = "";
 
 if (defined $stdin) {
-  while(<>){
-    $text .= $_;
+ while (<>) {
+  if (/^$/) {
+    # auto-flush on socket
+    $| = 1;
+    $inputdata .= $_;
+    # create a connecting socket
+    my $socket = new IO::Socket::INET (PeerHost => $host, PeerPort => $port, Proto => 'tcp',);
+    print STDERR "Host: $host, Port: $port\n";
+    binmode($socket, ":utf8");
+    my $message = "";
+    die "cannot connect to the server $!\n" unless $socket;
+    $message = "connected to the server";
+
+    # data to send to a server
+    my $size = $socket->send($inputdata);
+    $message = "$message, sent data of length $size";
+
+    # notify server that request has been sent
+    shutdown($socket, 1);
+
+    # receive a response of up to 1024 characters from server
+    my $response = "";
+    $socket->recv($response, $buffsize);
+    $outputdata .= $response;
+
+    $socket->close();
+    $inputdata = "";
+  } else {
+    $inputdata .= $_;
   }
+ }
 }
 else {
   # -- Getting data from file
@@ -49,29 +79,5 @@ else {
   }
 }
 
-
-# auto-flush on socket
-$| = 1;
-
-# create a connecting socket
-my $socket = new IO::Socket::INET (PeerHost => $host, PeerPort => $port, Proto => 'tcp',);
-print STDERR "Host: $host, Port: $port File: $file\n$text";
-binmode($socket, ":utf8");
-my $message = "";
-die "cannot connect to the server $!\n" unless $socket;
-$message = "connected to the server";
-
-# data to send to a server
-my $size = $socket->send($text);
-$message = "$message, sent data of length $size";
-
-# notify server that request has been sent
-shutdown($socket, 1);
-
-# receive a response of up to 1024 characters from server
-my $response = "";
-$socket->recv($response, $buffsize);
-print "$response";
-
-$socket->close();
-
+print "$outputdata";
+print STDERR "$outputdata";
