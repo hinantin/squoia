@@ -16,7 +16,7 @@
 
 
 
-# copy attribue nouncase generated from preposition to noun in the pp
+# copy attribute nouncase generated from preposition to noun in the pp
 # -> this is only necessary in case the preposition is a postposition marked with 3.Sg.Poss and the noun needs a genitive suffix
 # detrás de la casa: wasiPA qhipan
 #my.nouncase=/.+/ && my.type=/grup-sp|coor-sp/		nouncase			my.type=sn			nouncase		child		1to2		concat
