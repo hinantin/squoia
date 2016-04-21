@@ -141,3 +141,8 @@ Query returned 1 item(s) in 2.8s
 Average: 3.16s
 ```
 
+### Compiling the dictionary
+
+
+/home/richard/Desktop/apertium/lttoolboxinstall/bin/lt-comp lr /home/richard/Documents/squoia/MT_systems/squoia/esqu/lexica/es-quz.dix /home/richard/Documents/squoia/MT_systems/squoia/esqu/lexica/es-quz.bin
+
