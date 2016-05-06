@@ -347,6 +347,10 @@ sub main{
 									$addverbmi =~ s/\+Inf//g;
 								}
 			 					$verbmi = $verbmi.$add_mi.$addverbmi;
+			 					# with 'acabar de' (acabo de llegar de trabajar) -> results in Inf+Rptn -> delete +Inf
+								if($verbmi =~ /\+Inf/ && $verbmi =~ /\+Rptn/){
+									$verbmi =~ s/\+Inf//g;
+								}
 			 					push(@verbmis, $verbmi);
 			 				}
 			 				for(my $k=0;$k<scalar(@verbmis);$k++)

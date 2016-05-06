@@ -55,7 +55,7 @@ sub main{
 	
 						# for every child of chunk, check if one of the conditions applies
 						foreach my $child (@children)
-						{	
+						{
 							# get all childs that are CHUNKs
 							if($child->nodeName eq 'CHUNK')										
 							{
