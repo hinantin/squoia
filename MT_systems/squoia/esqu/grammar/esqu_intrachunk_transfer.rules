@@ -335,6 +335,7 @@ my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or 
 my.slem=/tener|deber/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/...C/	"+3.Sg.Subj+Pot"		my.type=/grup-verb/ && !(my.si=cd) && !(my.verbform=/rel:/)			verbmi2			up		concat
 
 
+
 ## forms of tener hambre, tener hipo etc: in Quechua, one root, delete object####
 my.slem=hipo && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="hik'i" and @slem="tener"]}			"yes"	my.si=/cd/	delete		up	overwrite
 my.slem=/flojera|pereza/ && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="qilla" and @slem="tener"]}	"yes"	my.si=/cd/	delete		up	overwrite
@@ -353,6 +354,27 @@ my.slem=fé && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coo
 # tener .. años: set case of wata -> +Poss, delete +Pl -> tengo 4 años -> 4 watayuq kani, no *4 watakunata kani
 my.slem=año && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="ka" and @slem="tener"]}			"+Pl,+Acc"		my.si=/cd/	deleteMorph		up	concat
 xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="ka" and @slem="tener"]} && my.slem=año			"+Poss"	my.si=/cd/	case			up	overwrite
+
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
+
+    ########################
+    # SPECIAL CASE: ACABAR #
+    ########################
+
+# acabar de hacer algo > ruwana+repentine -> extract person information from finite verb and copy that to the attribute verbmi of the verb chunk and write form of KAN to the chunk for generation
+# NOTE: do not add lem2 and verbmi2 if this is a complement or relative clause, in these cases, only nominal form of main verb is needed
+# alternatives marked with '#'
+# rules I:
+
+my.slem=/acabar/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/1S/		"+Rptn+1.Sg.Subj"			my.type=/grup-verb/			addverbmi			up		overwrite
+my.slem=/acabar/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/1P/		"+Rptn+1.Pl.Incl.Subj"			my.type=/grup-verb/			addverbmi			up		overwrite
+my.slem=/acabar/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/1P/		"+Rptn+1.Pl.Excl.Subj"			my.type=/grup-verb/			addverbmi			up		overwrite
+my.slem=/acabar/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/2S/		"+Rptn+2.Sg.Subj"			my.type=/grup-verb/			addverbmi			up		overwrite
+my.slem=/acabar/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/2P/		"+Rptn+2.Pl.Subj"			my.type=/grup-verb/			addverbmi			up		overwrite
+my.slem=/acabar/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/3S/		"+Rptn+3.Sg.Subj"			my.type=/grup-verb/			addverbmi			up		overwrite
+my.slem=/acabar/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/3P/		"+Rptn+3.Pl.Subj"			my.type=/grup-verb/			addverbmi			up		overwrite
+
+xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.slem=/acabar/ 		 	"1"				my.type=/grup-verb/ && !(my.si=cd) && !(my.verbform=/rel:/)			deletefiniteMiInAux	up		overwrite
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
