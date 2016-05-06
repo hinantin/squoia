@@ -3474,4 +3474,31 @@ por_las_puras por_las_puras RG I
 % añadidas por Annette (relevante para tópico/foco)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 en_lo_que_concierna en_lo_que_concierna SPS00
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% añadidas por Richard
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Adverbs
+otra_vez otra_vez RG I
+de_nuevo de_nuevo RG I
+de_ese_modo de_ese_modo RG I
+de_esa_manera de_esa_manera RG I
+de_este_modo de_este_modo RG I
+de_esta_manera de_esta_manera RG I
+
+% Compound verbs
+<tomar>_asiento tomar_asiento $1:VM I
+<pasar>_adentro pasar_adentro $1:VM A
+<pasar>_dentro pasar_dentro $1:VM A
+#<acabar>_de_VMN0000 acabar_de_$L3 $1:VMI A
+
+% compound adjectives
+papa_sancochada papa_sancochada NCFS000 I
+papa_cocida papa_cocida NCFS000 I
+ají_molido ají_molido NCFS000 I
+chuño_en_remojo chuño_en_remojo NCFS000 I
+chuño_remojado chuño_remojado NCFS000 I
+maíz_en_remojo maíz_en_remojo NCFS000 I
+maíz_remojado maíz_remojado NCFS000 I
+
 </Multiwords>
