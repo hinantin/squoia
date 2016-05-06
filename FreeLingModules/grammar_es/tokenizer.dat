@@ -35,6 +35,7 @@ URLS2           1  ([\w\.\-]+\.(com|org|net))[\s]
 KEEP_COMPOUNDS  0  {ALPHA}+(['_\-\+]{ALPHA}+)+
 *ABREVIATIONS1  0  (({ALPHA}+\.)+)(?!\.\.)
 *ABREVIATIONS2  0  ({ALPHA}+\.)(?!\.\.)
+*CSABREVIATIONSWSPACE   0  (({ALPHA}+\.\s)+({ALPHA}+\.))(?!\.\.)
 WORD            0  {ALPHANUM}+[\+]*
 OTHERS_C        0  {OTHERS}
 </RegExps>
@@ -120,6 +121,8 @@ excmos.
 fasc.
 fdo.
 feb.
+ff.aa.
+ff. aa.
 fig.
 figs.
 fol.
