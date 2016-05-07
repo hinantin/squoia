@@ -127,7 +127,7 @@ acordar		yuya	k	xpath{parent::CHUNK/CHUNK[@type="grup-sp" or @type="coor-sp"]/NO
 acordar		kama	k	xpath{following-sibling::CHUNK[(@type="sn" or @type="coor-n") and (@si="cd" or @si="cd-a")]/NODE[starts-with(@smi,"N")]}
 
 # dar sed
-dar	ch'aki	k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="sed"]}
+# dar	ch'aki	k	xpath{ancestor::CHUNK[1]/CHUNK[contains(@si,"cd")]/NODE[@slem="sed"]}
 
 #deber deuda/algo -> manuka-, deber hacer algo -> obligative
 deber	manuka		k	!(xpath{parent::NODE[starts-with(@smi,"V")]})
