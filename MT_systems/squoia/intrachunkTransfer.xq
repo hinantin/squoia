@@ -57,13 +57,11 @@ for $CHUNK in $dom//CHUNK
       ))]
     let $s := fn:replace(data($intraRULE/child::descendantCond), "\$NODE", "\$intraNODE")
     let $result := util:eval($s)
-    where not(fn:empty($result))
     return 
         (: the sequence must not go up to $CHUNK or its ancestors :)
         for $ancestorCHUNK in ($result/ancestor::CHUNK except $CHUNK/ancestor-or-self)
         let $s := fn:replace(data($intraRULE/child::ancestorCond), "\$CHUNK", "\$ancestorCHUNK")
         let $result := util:eval($s)
-        where not(fn:deep-equal($ancestorCHUNK, $CHUNK))
             return
               if (fn:empty($result)) then ()
               else (
