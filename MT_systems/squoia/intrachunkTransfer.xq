@@ -50,7 +50,11 @@ let $intraConditions := doc('/db/MT_Systems/squoia/esqu/grammar/esqu_intrachunk_
 return <methodResponse><params><param><value><string> {
 for $CHUNK in $dom//CHUNK 
   for $intraNODE in $CHUNK/child::NODE (: Getting intranodes :)
-    for $intraRULE in $intraConditions//rule
+    for $intraRULE in $intraConditions//rule[not(fn:empty(
+      util:eval(
+        fn:replace(data(./child::descendantCond), "\$NODE", "\$intraNODE")
+       )
+      ))]
     let $s := fn:replace(data($intraRULE/child::descendantCond), "\$NODE", "\$intraNODE")
     let $result := util:eval($s)
     where not(fn:empty($result))
