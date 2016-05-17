@@ -351,6 +351,10 @@ sub main{
 								if($verbmi =~ /\+Inf/ && $verbmi =~ /\+Rptn/){
 									$verbmi =~ s/\+Inf//g;
 								}
+			 					# with 'tener ganas de' (tengo ganas de comer ) -> results in Inf+Des -> delete +Inf
+								if($verbmi =~ /\+Inf/ && $verbmi =~ /\+Des/){
+									$verbmi =~ s/\+Inf//g;
+								}
 			 					push(@verbmis, $verbmi);
 			 				}
 			 				for(my $k=0;$k<scalar(@verbmis);$k++)
@@ -360,18 +364,22 @@ sub main{
 					 			my $lemma = $syn->getAttribute('lem');
 					 			if($syn->getAttribute('lem') eq 'unspecified' or $syn->getAttribute('unknown') eq 'transfer')
 					 			{
-					 				# check if this SYN has an slem (ambiguous lemmas from tagging), else take slem from parent NODE
-					 				$lemma = $syn->getAttribute('slem') ? $syn->getAttribute('slem'): $chunk->findvalue('child::NODE/@slem');
-					 				#if this was an ambiguous lemma from tagging, use 'tradlem' (contains lemma of node)
-					 				if($lemma =~ /##/ && $chunk->findvalue('child::NODE/@tradlem') ne ''){$lemma = $chunk->findvalue('child::NODE/@tradlem')};
-					 				unless($lemma =~ /_/){
-						 				if($lemma =~ /r$/){$lemma =~ s/r$//;}
-						 				elsif($lemma =~ /ndo$/){$lemma =~ s/ndo$//;}
-						 				elsif($lemma =~ /ad[oa]$/){$lemma =~ s/ad[oa]$//;}
-					 				}
-					 				# if no source lemma because morph analysis didn't recognize the word: use the word form..
-					 				elsif($lemma eq 'ZZZ'){$lemma = $chunk->findvalue('child::NODE/@sform'); }
-					 				
+									if ($chunk->getAttribute('lem')) {
+										$lemma = $chunk->getAttribute('lem');
+									}
+									else {
+										# check if this SYN has an slem (ambiguous lemmas from tagging), else take slem from parent NODE
+										$lemma = $syn->getAttribute('slem') ? $syn->getAttribute('slem'): $chunk->findvalue('child::NODE/@slem');
+										#if this was an ambiguous lemma from tagging, use 'tradlem' (contains lemma of node)
+										if($lemma =~ /##/ && $chunk->findvalue('child::NODE/@tradlem') ne ''){$lemma = $chunk->findvalue('child::NODE/@tradlem')};
+										unless($lemma =~ /_/){
+											if($lemma =~ /r$/){$lemma =~ s/r$//;}
+											elsif($lemma =~ /ndo$/){$lemma =~ s/ndo$//;}
+											elsif($lemma =~ /ad[oa]$/){$lemma =~ s/ad[oa]$//;}
+										}
+										# if no source lemma because morph analysis didn't recognize the word: use the word form..
+										elsif($lemma eq 'ZZZ'){$lemma = $chunk->findvalue('child::NODE/@sform'); }
+									}
 					 				if(!$syn->hasAttribute('verbmi'))
 					 				{
 					 					# if this a participle without finite verb, use -sqa form
@@ -792,12 +800,17 @@ sub printNode{
 	
 	my $nodeString='';
 	my $lemma;
-	
+	#print STDOUT "NODE ".$node->toString(1)."\n";
+	#print STDOUT  "\n$lemma\noooooooooooooooo-ooooooooooooooooooooooooooooooooooooooooooo<=====\n";
 	# if Spanish word in dictionary, but no translation: take source lemma + mi
  	if($node->getAttribute('lem') eq 'unspecified')
  	{
  		#print STDOUT  $node->getAttribute('slem').":".$node->getAttribute('mi');
- 		if($node->hasAttribute('slem')){
+ 		#print STDOUT  "oooooooooooooooo-ooooooooooooooooooooooooooooooooooooooooooo<=====\n";
+ 		if ($node->findvalue('parent::CHUNK/@lem')) {
+			$lemma = $node->findvalue('parent::CHUNK/@lem');
+		}
+ 		elsif($node->hasAttribute('slem')){
  			$lemma = $node->getAttribute('slem');
  			#if this was an ambiguous lemma from tagging, use 'tradlem' (contains lemma of node)
 			if($lemma =~ /##/ && $node->getAttribute('tradlem') ne ''){
