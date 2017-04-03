@@ -36,15 +36,17 @@ sub main{
 
 	foreach my $chunk ( $dom->getElementsByTagName('CHUNK') ) {
 		#print STDERR "chunk ". $chunk->getAttribute('ref'). " of type " . $chunk->getAttribute('type')."\n" if $verbose;
+		#print STDERR "chunk ".$chunk->toString(1)."\n" if $verbose;
 		foreach my $condpair (keys %interConditions) {
 			my ($chunk1Cond,$chunk2Cond,$path1to2) = split( /\t/, $condpair);
 	#		print STDERR "$chunk1Cond ++ $chunk2Cond\n" if $verbose;
 			#check chunk 1 conditions
 			my @chunk1Conditions = squoia::util::splitConditionsIntoArray($chunk1Cond);
-	#		print STDERR "$chunk1Cond\n" if $verbose;
+	#		print STDERR "***> $chunk1Cond\n" if $verbose;
 			my $result = squoia::util::evalConditions(\@chunk1Conditions,$chunk);
 	#		print STDERR "result $result\n" if $verbose;
 			if ($result) {
+				print STDERR "INTERCHUNK:\n Chunk 1 condition met\n==================================\n $chunk1Cond\n" if $verbose;
 				# find chunk candidates related to the current chunk
 				my @candidates = squoia::util::getRelatedChunks($chunk,$path1to2);
 				#print STDERR scalar(@candidates). " candidates\n" if $verbose;

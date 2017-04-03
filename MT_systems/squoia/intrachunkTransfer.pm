@@ -47,6 +47,7 @@ sub main{
 				my $result = squoia::util::evalConditions(\@nodeConditions,$node);
 	#			print STDERR "result $result\n" if $verbose;
 				if ($result) {
+					print STDERR "\nDescendant condition that was met:\n================================\n --> $descCond\n" if $verbose;
 					#find ancestor within chunk
 					print STDERR "\n$descCond ++ $ancCond\n" if $verbose;
 					my @ancConditions = squoia::util::splitConditionsIntoArray($ancCond);
@@ -54,12 +55,15 @@ sub main{
 					my $found = 0;
 					while (not $ancestor->isSameNode($chunk)) {
 						$ancestor = $ancestor->parentNode;
+						my $ancestorstring = $ancestor->toString(1);
+						print STDERR "\nAncestor node to analyze:\n+++++++++++++++++++++++++++++\n$ancestorstring\n" if $verbose;
 	#					print STDERR $ancestor->nodeName."\n" if $verbose;
 	#					print STDERR $ancestor->getAttribute('type')."\n" if $verbose;
 						$found = squoia::util::evalConditions(\@ancConditions,$ancestor);
 						last if $found;
 					}
 					if ($found) {	
+						print STDERR "\nAncestor condition that was met:\n********************************\n -->> $ancCond\n" if $verbose;
 	#					print STDERR "\n\n\nfound ancestor ".$ancestor->getAttribute('ref')."\n" if $verbose;
 	#					print STDERR $ancestor->nodeName."\n" if $verbose;
 						my $configline = $intraConditions{$condpair};

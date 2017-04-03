@@ -36,9 +36,11 @@ filename_no_ext="${filename_w_ext%.*}"
 
 #echo "filename is $filename_no_ext"
 
-cat $RAW_FILE | perl splitSentences.pl | perl $NORMALIZER_DIR/tokenize.pl | lookup -f lookup.script -flags cKv29TT > $TMP_DIR/test.xfst
+# (1) XFST 
+cat $RAW_FILE | perl splitSentences.pl | perl $NORMALIZER_DIR/tokenize.pl | lookup -f lookup.script -flags cKv29TT > $TMP_DIR/$filename_no_ext.test.xfst
 
-cat $TMP_DIR/test.xfst | perl cleanGuessedRoots.pl -$EVID -$PISPAS > $TMP_DIR/test_clean.xfst
+# (2) CRF before|after
+cat $TMP_DIR/$filename_no_ext.test.xfst | perl cleanGuessedRoots.pl -$EVID -$PISPAS > $TMP_DIR/test_clean.xfst
 cat $TMP_DIR/test_clean.xfst | perl xfst2wapiti_pos.pl -test > $TMP_DIR/pos.test
 
 $WAPITI label -m $MORPH1_MODEL $TMP_DIR/pos.test > $TMP_DIR/morph1.result
@@ -57,14 +59,16 @@ perl xfst2wapiti_morphTest.pl -3 $TMP_DIR/morph3.result > $TMP_DIR/morph4.test
 
 $WAPITI label -m $MORPH4_MODEL $TMP_DIR/morph4.test > $TMP_DIR/morph4.result
 
-perl xfst2wapiti_morphTest.pl -4 $TMP_DIR/morph4.result > $TMP_DIR/disamb.xfst
+perl xfst2wapiti_morphTest.pl -4 $TMP_DIR/morph4.result > $TMP_DIR/$filename_no_ext.disamb.xfst
 
+# (3) CONLL before|after
 # convert xfst to conll
-cat $TMP_DIR/disamb.xfst | perl xfst2conll.pl > $TMP_DIR/$filename_no_ext.conll
+cat $TMP_DIR/$filename_no_ext.disamb.xfst | perl xfst2conll.pl > $TMP_DIR/$filename_no_ext.conll
 
 # parse conll
 java -jar $MALTPARSER_DIR/maltparser-1.8.1.jar -c $MALTPARSER_MODEL -i $TMP_DIR/$filename_no_ext.conll -o $TMP_DIR/$filename_no_ext.parsed.conll -m parse
 
+# (4) PML | TEXTREE | CONSTITUENT STRUCTURE
 # convert conll to pml to view (and edit) trees in TrEd (see https://ufal.mff.cuni.cz/tred/)
 perl quzconll2pml.pl -s quz_schema.xml -n $filename_no_ext -c $TMP_DIR/$filename_no_ext.parsed.conll -t quz_stylesheet > $TMP_DIR/$filename_no_ext.pml 
 

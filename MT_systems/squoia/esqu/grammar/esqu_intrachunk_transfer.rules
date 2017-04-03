@@ -30,9 +30,9 @@ my.prepos=/.+/			prepos		my.type=/grup-sp|coor-sp/		prepos		up		concat
 
 
 
-    ##############
-    # DETRMINERS #
-    ##############
+    ###############
+    # DETERMINERS #
+    ###############
     
 # delete plural suffix in demonstrative or indefinite pronouns if head is a number
 my.smi=/^DD/ && my.mi=/\+Pl/			"+Pl"			my.type=det				deleteMorph		up		concat
@@ -72,24 +72,24 @@ my.spform=/.+/ && my.smi=/^SP/		spform			my.type=/grup-sp|coor-sp/		spform			up	
 # copy possessive suffixes to noun chunk
 my.mi=/\+\+.+Poss/		mi			my.type=/sn|coor-n/			poss			up		concat
 
-# copy func=attribute to the chunk level (e.g. of originally Spanish adjectives) for later reordering
+# copy func=attribute to the chunk level (e.g. of originally Spanish adjectives) for later reordering DONE
 my.func=attributive			func		my.type=/sa|coor-sa/				func					up			concat
 
 # if sn chunk with 3rd person clitic (le,lo,la)
 # -> set delete=yes in sn-chunk
-# TODO: always delete le,lo,la? or only if 'double' (lo he visto a Juan)?
+# TODO: always delete le,lo,la? or only if 'double' (lo he visto a Juan)? DONE
 my.smi=/PP3[MFC][SP][AD]../		"yes"				my.type=/sn|coor-n/		delete		up		overwrite
 
-# delete personal pronouns with ++Obj in chunk (redundant)
+# delete personal pronouns with ++Obj in chunk (redundant) DONE
 my.mi=/\+\+.+Obj/		"yes"			my.type=/sn|coor-n/		delete		up		overwrite
 
-# if sn chunk with 'se' -> set delete=yes for this node
+# if sn chunk with 'se' -> set delete=yes for this node DONE
 my.slem=se				"yes"				my.type=/sn|coor-n/		delete		up		overwrite
 
 # if sn chunk and si=cd -> set mi=+Acc (also for cd/ci and cd-a, TODO: better Acc as default or Dat?)
 # NOTE: no accusative in nominal verb chunks! 
 # -> Maria vio que yo hice una casa = Mariya ñuqap wasi rurasqayta rikurqan (no wasiTA)
-# another special case: nominal head of internally headed relative clause: will be moved into rel-clause, don't insert case markers!
+# another special case: nominal head of internally headed relative clause: will be moved into rel-clause, don't insert case markers! DONE
 parent.type=sn					"+Acc"				my.si=/cd/ && !(chunkparent.verbform=/perfect|obligative|^rel/) && !(chunkchild.IHRC=yes)&& !(xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/child::NODE/descendant::NODE[@slem="tener"]} && xpath{ancestor::CHUNK[@type="grup-verb" or @type="coor-v"][1]/child::NODE/descendant::NODE[@slem="que"]} )			case			up		concat
 
 
@@ -153,7 +153,7 @@ my.verbmi=/.+/ && my.smi=/1|2|3/ && !(my.slem=tener && (rsibling.slem=que || par
 # lem = lem of infinitive, verbmi = mi of finite verb +Inch
 # same:  continuar + gerund / continuar a +inf: add +Perdur to addverbmi
 # TODO: ponerse a +Inf -> Inch, 
-  # if analyzed in one verb chunk:
+  # if analyzed in one verb chunk: #ERROR
 my.slem=/poner|llegar|comenzar|empezar|continuar/ && my.smi=/1|2|3/ && parent.mi=infinitive && my.verbmi=/.+/ 			"yes"		my.type=/grup-verb|coor-v/	finiteMiInAux		up	overwrite
 my.slem=/poner|llegar|comenzar|empezar/ && xpath{ancestor::NODE[@mi="infinitive"]}						"+Inch"		my.type=/grup-verb|coor-v/	addverbmi		up	concat
 my.slem=continuar && xpath{ancestor::NODE[@mi="infinitive"]}						"+Perdur"	my.type=/grup-verb|coor-v/	addverbmi		up	concat
@@ -275,7 +275,7 @@ my.iobjCase=/.+/				iobjCase		my.type=/grup-verb|coor-v/		iobjCase	up			overwrit
 # IHRC: INTERNALLY HEADED RELATIVE CLAUSES
 # subject of a relative clause with IHRC=yes (internally headed relative clause)
 # -> add possessive suffix of subject person to (nominal) verbform if the rel.clause is not.agentive
-# also: -> add genitive suffix to subject (in STinterchunk.rules!)
+# also: -> add genitive suffix to subject (in STinterchunk.rules!) ERROR?
 my.verbmi=/.+/ && my.smi=/1S/		"+1.Sg.Poss				my.IHRC=yes && my.verbform=rel:not.agentive		addverbmi		up		concat
 my.verbmi=/.+/ && my.smi=/1P/		"+1.Pl.Incl.Poss			my.IHRC=yes && my.verbform=rel:not.agentive		addverbmi		up		concat
 #my.verbmi=/.+/ && my.smi=/1P/		"+1.Excl.Pl.Poss			my.IHRC=yes && my.verbform=rel:not.agentive		addverbmi		up		concat
@@ -343,7 +343,8 @@ my.slem=enemistad && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @typ
 my.slem=miedo && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="mancha" and @slem="tener"]}			"yes"	my.si=/cd/	delete		up	overwrite
 my.slem=pareja && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="yanacha" and @slem="tener"]}		"yes"	my.si=/cd/	delete		up	overwrite
 my.slem=pena && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="llaki" and @slem="tener"]}			"yes"	my.si=/cd/	delete		up	overwrite
-my.slem=vergüenza && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="vergüenza" and @slem="tener"]}		"yes"	my.si=/cd/	delete		up	overwrite
+## possible error replace @lem="vergüenza" with @lem="p'inqa"
+my.slem=vergüenza && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="p'inqa" and @slem="tener"]}		"yes"	my.si=/cd/	delete		up	overwrite
 my.slem=/compasión|piedad/ && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="khuya" and @slem="tener"]}	"yes"	my.si=/cd/	delete		up	overwrite
 my.slem=/fragancia|olor/ && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="q'apa" and @slem="tener"]}	"yes"	my.si=/cd/	delete		up	overwrite
 my.slem=hambre && xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem="mikhunaya" and @slem="tener"]}		"yes"	my.si=/cd/	delete		up	overwrite
@@ -357,9 +358,9 @@ xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
-    ########################
-    # SPECIAL CASE: ACABAR #
-    ########################
+    ######################################
+    # SPECIAL CASE: ACABAR DE HACER ALGO #
+    ######################################
 
 # acabar de hacer algo > ruwana+repentine -> extract person information from finite verb and copy that to the attribute verbmi of the verb chunk and write form of KAN to the chunk for generation
 # NOTE: do not add lem2 and verbmi2 if this is a complement or relative clause, in these cases, only nominal form of main verb is needed
@@ -375,6 +376,42 @@ my.slem=/acabar/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi=
 my.slem=/acabar/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/3P/		"+Rptn+3.Pl.Subj"			my.type=/grup-verb/			addverbmi			up		overwrite
 
 xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.slem=/acabar/ 		 	"1"				my.type=/grup-verb/ && !(my.si=cd) && !(my.verbform=/rel:/)			deletefiniteMiInAux	up		overwrite
+
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
+
+    ################################
+    # SPECIAL CASE: TENER GANAS DE #
+    ################################
+
+# tener <muchas> ganas <extremas> de hacer algo > ruwa+desiderative -> extract person information from finite verb and copy that to the attribute verbmi of the verb chunk for generation
+# rules I:
+xpath{ancestor::CHUNK[1]/ancestor::CHUNK[1]/child::NODE[@slem="tener_ganas_de"]} && my.smi=/VMN0000|VSN0000|AUX0000/	lem			my.type=/grup-verb/			lem			up		overwrite
+xpath{ancestor::CHUNK[1]/ancestor::CHUNK[1]/child::NODE[@slem="tener_ganas_de"]} && my.smi=/VMN0000|VSN0000/		"yes"			my.type=/grup-verb/			delete	up		overwrite
+
+my.slem=/tener_ganas_de/ && my.smi=/1S/		",+Des"			my.type=/grup-verb/			addverbmi			up		concat
+my.slem=/tener_ganas_de/ && my.smi=/1P/		",+Des"			my.type=/grup-verb/			addverbmi			up		concat
+my.slem=/tener_ganas_de/ && my.smi=/1P/		",+Des"			my.type=/grup-verb/			addverbmi			up		concat
+my.slem=/tener_ganas_de/ && my.smi=/2S/		",+Des"			my.type=/grup-verb/			addverbmi			up		concat
+my.slem=/tener_ganas_de/ && my.smi=/2P/		",+Des"			my.type=/grup-verb/			addverbmi			up		concat
+my.slem=/tener_ganas_de/ && my.smi=/3S/		",+Des"			my.type=/grup-verb/			addverbmi			up		concat
+my.slem=/tener_ganas_de/ && my.smi=/3P/		",+Des"			my.type=/grup-verb/			addverbmi			up		concat
+
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
+
+    #####################################
+    # SPECIAL CASE: AYUDAR A HACER ALGO #
+    #####################################
+    
+xpath{ancestor::CHUNK[1]/ancestor::CHUNK[1]/child::NODE[@slem="ayudar_a"]} && my.smi=/VMN0000|VSN0000|AUX0000/	lem			my.type=/grup-verb/			lem			up		overwrite
+xpath{ancestor::CHUNK[1]/ancestor::CHUNK[1]/child::NODE[@slem="ayudar_a"]} && my.smi=/VMN0000|VSN0000/		"yes"			my.type=/grup-verb/			delete	up		overwrite
+
+my.slem=/ayudar_a/ && my.smi=/1S/		",+Ass"			my.type=/grup-verb/			addverbmi			up		concat
+my.slem=/ayudar_a/ && my.smi=/1P/		",+Ass"			my.type=/grup-verb/			addverbmi			up		concat
+my.slem=/ayudar_a/ && my.smi=/1P/		",+Ass"			my.type=/grup-verb/			addverbmi			up		concat
+my.slem=/ayudar_a/ && my.smi=/2S/		",+Ass"			my.type=/grup-verb/			addverbmi			up		concat
+my.slem=/ayudar_a/ && my.smi=/2P/		",+Ass"			my.type=/grup-verb/			addverbmi			up		concat
+my.slem=/ayudar_a/ && my.smi=/3S/		",+Ass"			my.type=/grup-verb/			addverbmi			up		concat
+my.slem=/ayudar_a/ && my.smi=/3P/		",+Ass"			my.type=/grup-verb/			addverbmi			up		concat
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 

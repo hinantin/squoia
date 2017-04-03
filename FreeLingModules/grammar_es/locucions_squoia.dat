@@ -3491,8 +3491,10 @@ de_esta_manera de_esta_manera RG I
 <pasar>_adentro pasar_adentro $1:VM A
 <pasar>_dentro pasar_dentro $1:VM A
 #<acabar>_de_VMN0000 acabar_de_$L3 $1:VMI A
+<tener>_ganas_de tener_ganas_$L3 $1:VMI A
+<ayudar>_a ayudar_$L2 $1:VMI A
 
-% compound adjectives
+% compound nouns
 papa_sancochada papa_sancochada NCFS000 I
 papa_cocida papa_cocida NCFS000 I
 ají_molido ají_molido NCFS000 I
@@ -3500,5 +3502,19 @@ chuño_en_remojo chuño_en_remojo NCFS000 I
 chuño_remojado chuño_remojado NCFS000 I
 maíz_en_remojo maíz_en_remojo NCFS000 I
 maíz_remojado maíz_remojado NCFS000 I
+altillo_de_la_casa altillo_de_la_casa NCFS000 I
+altos_de_la_casa altos_de_la_casa NCFS000 I
+segundo_piso_de_la_casa segundo_piso_de_la_casa NCFS000 I
+segundo_piso segundo_piso NCFS000 I
+
+% augmentative adjectives
+grandote grande AQAMS0 A
+grandotes grande AQAMP0 A
+grandota grande AQAFS0 A
+grandotas grande AQAFP0 A
+grandaza grande AQAFS0 A
+grandazas grande AQAFP0 A
+grandazo grande AQAMS0 A
+grandazos grande AQAMP0 A
 
 </Multiwords>
