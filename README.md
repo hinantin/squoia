@@ -124,19 +124,24 @@ spaWN/wei_spa-30_variant.tsv
 Please download this Wapiti version `https://github.com/rcastromamani/Wapiti`, for the official version does not support a server mode as of today.
 
 ```
-$ cd /home/richard/Documents/wapiti
+$ git clone https://github.com/rcastromamani/Wapiti
+$ cd Wapiti
 $ ./wapiti label --server -P 8888 --force -m /home/richard/Documents/squoia/MT_systems/models/3gram_enhancedAncora.model
 ```
 
 #### Squoia Freeling modules
 
 ```
+$ git clone https://github.com/TALP-UPC/FreeLing
+$ cd FreeLing/
+
 # --- Compiling Freeling
 # --- autoreconf -i 
 $ sudo apt-get install autoconf autoconf2.13
 $ sudo apt-get install libboost-dev libboost-regex-dev libicu-dev libboost-system-dev libboost-program-options-dev libboost-thread-dev zlib1g-dev
 $ sudo apt-get install libtool automake libtool zlib1g-dev libboost-dev  libboost-test-dev libboost-system-dev libboost-thread-dev
 
+$ 
 $ mkdir m4
 $ ./autogen.sh
 $ make install
