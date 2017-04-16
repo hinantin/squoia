@@ -3490,9 +3490,9 @@ de_esta_manera de_esta_manera RG I
 <tomar>_asiento tomar_asiento $1:VM I
 <pasar>_adentro pasar_adentro $1:VM A
 <pasar>_dentro pasar_dentro $1:VM A
-#<acabar>_de_VMN0000 acabar_de_$L3 $1:VMI A
+<acabar>_de acabar_$L2 $1:VMI A
 <tener>_ganas_de tener_ganas_$L3 $1:VMI A
-<ayudar>_a ayudar_$L2 $1:VMI A
+<ayudar>_a ayudar_$L2 $1:VMI I
 
 % compound nouns
 papa_sancochada papa_sancochada NCFS000 I
