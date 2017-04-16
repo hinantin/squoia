@@ -368,8 +368,8 @@ xpath{parent::CHUNK/parent::CHUNK[@type="grup-verb" or @type="coor-v"]/NODE[@lem
 # rules I:
 
 #xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.slem=/acabar_de/ 		 	"1"				my.type=/grup-verb/ && !(my.si=cd) && !(my.verbform=/rel:/)			deletefiniteMiInAux	up		overwrite
-xpath{ancestor::CHUNK[1]/ancestor::CHUNK[1]/child::NODE[@slem="acabar_de"]} && my.smi=/VMN0000|VSN0000|AUX0000/	lem			my.type=/grup-verb/			lem	up		overwrite
-#xpath{ancestor::CHUNK[1]/ancestor::CHUNK[1]/child::NODE[@slem="acabar_de"]} && my.smi=/VMN0000|VSN0000/		"yes"			my.type=/grup-verb/			delete	up		overwrite
+xpath{ancestor::CHUNK[1]/ancestor::CHUNK[1]/child::NODE[@slem="acabar_de"]} && my.smi=/VMN0000|VSN0000|AUX0000/	lem			my.type=/grup-verb/			lem			up		overwrite
+xpath{ancestor::CHUNK[1]/ancestor::CHUNK[1]/child::NODE[@slem="acabar_de"]} && my.smi=/VMN0000|VSN0000/		"yes"			my.type=/grup-verb/			delete	up		overwrite
 
 my.slem=/acabar_de/ && my.smi=/1S/		"+Rptn+1.Sg.Subj"			my.type=/grup-verb/			addverbmi			up		overwrite
 my.slem=/acabar_de/ && my.smi=/1P/		"+Rptn+1.Pl.Incl.Subj"			my.type=/grup-verb/			addverbmi			up		overwrite
@@ -387,7 +387,7 @@ my.slem=/acabar_de/ && my.smi=/3P/		"+Rptn+3.Pl.Subj"			my.type=/grup-verb/			ad
 #my.slem=/acabar_de/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/3S/		"+Rptn+3.Sg.Subj"			my.type=/grup-verb/			addverbmi			up		overwrite
 #my.slem=/acabar_de/ && xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.smi=/3P/		"+Rptn+3.Pl.Subj"			my.type=/grup-verb/			addverbmi			up		overwrite
 
-xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.slem=/acabar_de/ 		 	"1"				my.type=/grup-verb/ && !(my.si=cd) && !(my.verbform=/rel:/)			deletefiniteMiInAux	up		overwrite
+#xpath{ancestor::CHUNK[1]/child::NODE[@smi="VMN0000" or @smi="VSN0000"]} && my.slem=/acabar_de/ 		 	"1"				my.type=/grup-verb/ && !(my.si=cd) && !(my.verbform=/rel:/)			deletefiniteMiInAux	up		overwrite
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 

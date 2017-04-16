@@ -166,6 +166,7 @@ my.type=grup-sp && child.slem=sin && my.prepos=mana		prepos		(my.type=sn && chil
 my.postform=p'unchaw			"yes"		child.slem=día && my.type=sn && xpath{child::CHUNK[@type="date" and @postform="p'unchaw"]}		delete		parent		1to2		overwrite
 
 my.type=/grup-verb/ && child.smi=/VMN0000|VSN0000/		lem		child.slem=/tener_ganas_de/		lem			parent			1to2			overwrite
+my.type=/grup-verb/ && child.smi=/VMN0000|VSN0000/		lem		child.slem=/acabar_de/		lem			parent			1to2			overwrite
 my.type=/grup-verb/ && child.smi=/VMN0000|VSN0000/		lem		child.slem=/ayudar_a/		lem			parent			1to2			overwrite
 
 
