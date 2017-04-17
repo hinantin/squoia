@@ -220,7 +220,7 @@ if($mode eq '-1')
 		}
 	}
 	#print "prev: $disambiguatedForms\n";
-	store \$disambiguatedForms, 'tmp/prevdisambMorph1';
+	store \$disambiguatedForms, '/home/richard/Documents/squoia/parsing/tmp/prevdisambMorph1';
 
 	# @word: 0: form, 1:@analyses, 2:@possibleClasses, 3:correctClass, 4: amb
 	# get NS / VS ambiguities
@@ -345,7 +345,7 @@ if($mode eq '-1')
 		
 	}
 	# store @words to disk
-	store \@words, 'tmp/words1';
+	store \@words, '/home/richard/Documents/squoia/parsing/tmp/words1';
 #	store \@ambWords, 'ambWords';
 	printCrf(\@words);
 	
@@ -355,7 +355,7 @@ if($mode eq '-2')
 {
 	# @word: 0: form, 1:@analyses, 2:@possibleClasses, 3: amb
 	#retrieve words from disk
-	my $wordsref = retrieve('tmp/words1');
+	my $wordsref = retrieve('/home/richard/Documents/squoia/parsing/tmp/words1');
 	@words = @$wordsref;
 	
 	# disambiguate with crf file
@@ -443,7 +443,7 @@ if($mode eq '-2')
 		
 	}
 	# store @words to disk
-	store \@words, 'tmp/words2';
+	store \@words, '/home/richard/Documents/squoia/parsing/tmp/words2';
 	&printCrf(\@words);
 	#&printXFST(\@words);
 }
@@ -452,7 +452,7 @@ if($mode eq '-3')
 {	
 	# @word: 0: form, 1:@analyses, 2:@possibleClasses, 3:correctClass, 4: amb 5: hasEvidential, 6: previousHasGenitive
 	#retrieve words from disk
-	my $wordsref = retrieve('tmp/words2');
+	my $wordsref = retrieve('/home/richard/Documents/squoia/parsing/tmp/words2');
 	@words = @$wordsref;
 	
 	# disambiguate with crf file
@@ -548,7 +548,7 @@ if($mode eq '-3')
 #		}
 	}
 	# store @words to disk
-	store \@words, 'tmp/words3';
+	store \@words, '/home/richard/Documents/squoia/parsing/tmp/words3';
 	printCrf(\@words);
 	#&printXFST(\@words);
 	
@@ -558,7 +558,7 @@ if($mode eq '-4')
 {	
 	# @word: 0: form, 1:@analyses, 2:@possibleClasses, 3:correctClass, 4: amb
 	#retrieve words from disk
-	my $wordsref = retrieve('tmp/words3');
+	my $wordsref = retrieve('/home/richard/Documents/squoia/parsing/tmp/words3');
 	@words = @$wordsref;
 	
 	# disambiguate with crf file
@@ -862,7 +862,7 @@ sub disambMorph1{
 	}
 
 	# retrieve number of previously disambiguated forms ('rule' based, e.g +Dist/+Term, chiqan/chiqa etc.)
-	my $prevdisamb = retrieve('tmp/prevdisambMorph1');
+	my $prevdisamb = retrieve('/home/richard/Documents/squoia/parsing/tmp/prevdisambMorph1');
 	#print "prev $$prevdisamb\n";
 	
 	# for testing: print xfst to STDERR
@@ -1038,7 +1038,7 @@ sub disambMorph2{
 		}
 	}
 	# retrieve number of previously disambiguated forms ('rule' based, e.g +Dist/+Term, chiqan/chiqa etc.)
-	my $prevdisamb = retrieve('tmp/prevdisambMorph1');
+	my $prevdisamb = retrieve('/home/richard/Documents/squoia/parsing/tmp/prevdisambMorph1');
 	#print "prev $$prevdisamb\n";
 	
 	# for testing: print xfst to STDERR
@@ -1195,7 +1195,7 @@ sub disambMorph3{
 		}
 	}
 	# retrieve number of previously disambiguated forms ('rule' based, e.g +Dist/+Term, chiqan/chiqa etc.)
-	my $prevdisamb = retrieve('tmp/prevdisambMorph1');
+	my $prevdisamb = retrieve('/home/richard/Documents/squoia/parsing/tmp/prevdisambMorph1');
 	#print "prev $$prevdisamb\n";	
 	#print xfst to STDOUT
 	#&printXFST(\@words);
