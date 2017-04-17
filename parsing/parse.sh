@@ -10,7 +10,7 @@ export NORMALIZER_DIR=/home/richard/Documents/Runa_Simi/06_Morphology/normalizer
 # Path to your maltparser installation (get MaltParser from http://www.maltparser.org/download.html)
 export MALTPARSER_DIR=/home/richard/Downloads/01_Instaladores/maltparser-1.8.1
 export WAPITI=/home/richard/Downloads/01_Instaladores/wapiti/wapiti-1.5.0/wapiti
-export TMP_DIR=tmp
+export TMP_DIR=/tmp
 export PARSER=/home/richard/Documents/squoia/parsing
 
 ## Models to disambiguate words
@@ -64,13 +64,13 @@ perl $PARSER/xfst2wapiti_morphTest.pl -4 $TMP_DIR/morph4.result > $TMP_DIR/$file
 
 # (3) CONLL before|after
 # convert xfst to conll
-cat $TMP_DIR/$filename_no_ext.disamb.xfst | perl xfst2conll.pl > $TMP_DIR/$filename_no_ext.conll
+cat $TMP_DIR/$filename_no_ext.disamb.xfst | perl $PARSER/xfst2conll.pl > $TMP_DIR/$filename_no_ext.conll
 
 # parse conll
 java -jar $MALTPARSER_DIR/maltparser-1.8.1.jar -c $MALTPARSER_MODEL -i $TMP_DIR/$filename_no_ext.conll -o $TMP_DIR/$filename_no_ext.parsed.conll -m parse
 
 # (4) PML | TEXTREE | CONSTITUENT STRUCTURE
 # convert conll to pml to view (and edit) trees in TrEd (see https://ufal.mff.cuni.cz/tred/)
-perl quzconll2pml.pl -s quz_schema.xml -n $filename_no_ext -c $TMP_DIR/$filename_no_ext.parsed.conll -t quz_stylesheet > $TMP_DIR/$filename_no_ext.pml 
+perl $PARSER/quzconll2pml.pl -s $PARSER/quz_schema.xml -n $filename_no_ext -c $TMP_DIR/$filename_no_ext.parsed.conll -t quz_stylesheet > $TMP_DIR/$filename_no_ext.pml 
 
 
