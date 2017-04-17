@@ -11,6 +11,7 @@ export NORMALIZER_DIR=/home/richard/Documents/Runa_Simi/06_Morphology/normalizer
 export MALTPARSER_DIR=/home/richard/Downloads/01_Instaladores/maltparser-1.8.1
 export WAPITI=/home/richard/Downloads/01_Instaladores/wapiti/wapiti-1.5.0/wapiti
 export TMP_DIR=tmp
+export PARSER=/home/richard/Documents/squoia/parsing
 
 ## Models to disambiguate words
 MORPH1_MODEL=models/morph1.model
@@ -37,29 +38,29 @@ filename_no_ext="${filename_w_ext%.*}"
 #echo "filename is $filename_no_ext"
 
 # (1) XFST 
-cat $RAW_FILE | perl splitSentences.pl | perl $NORMALIZER_DIR/tokenize.pl | lookup -f lookup.script -flags cKv29TT > $TMP_DIR/$filename_no_ext.test.xfst
+cat $RAW_FILE | perl $PARSER/splitSentences.pl | perl $NORMALIZER_DIR/tokenize.pl | /usr/bin/lookup -f $PARSER/lookup.script -flags cKv29TT > $TMP_DIR/$filename_no_ext.test.xfst
 
 # (2) CRF before|after
-cat $TMP_DIR/$filename_no_ext.test.xfst | perl cleanGuessedRoots.pl -$EVID -$PISPAS > $TMP_DIR/test_clean.xfst
-cat $TMP_DIR/test_clean.xfst | perl xfst2wapiti_pos.pl -test > $TMP_DIR/pos.test
+cat $TMP_DIR/$filename_no_ext.test.xfst | perl $PARSER/cleanGuessedRoots.pl -$EVID -$PISPAS > $TMP_DIR/test_clean.xfst
+cat $TMP_DIR/test_clean.xfst | perl $PARSER/xfst2wapiti_pos.pl -test > $TMP_DIR/pos.test
 
 $WAPITI label -m $MORPH1_MODEL $TMP_DIR/pos.test > $TMP_DIR/morph1.result
 
-perl disambiguateRoots.pl $TMP_DIR/morph1.result $TMP_DIR/test_clean.xfst > $TMP_DIR/morph1.disamb
+perl $PARSER/disambiguateRoots.pl $TMP_DIR/morph1.result $TMP_DIR/test_clean.xfst > $TMP_DIR/morph1.disamb
 
-perl xfst2wapiti_morphTest.pl -1 $TMP_DIR/morph1.disamb > $TMP_DIR/morph2.test
+perl $PARSER/xfst2wapiti_morphTest.pl -1 $TMP_DIR/morph1.disamb > $TMP_DIR/morph2.test
 
 $WAPITI label -m $MORPH2_MODEL $TMP_DIR/morph2.test > $TMP_DIR/morph2.result
 
-perl xfst2wapiti_morphTest.pl -2 $TMP_DIR/morph2.result > $TMP_DIR/morph3.test
+perl $PARSER/xfst2wapiti_morphTest.pl -2 $TMP_DIR/morph2.result > $TMP_DIR/morph3.test
 
 $WAPITI label -m $MORPH3_MODEL $TMP_DIR/morph3.test > $TMP_DIR/morph3.result
 
-perl xfst2wapiti_morphTest.pl -3 $TMP_DIR/morph3.result > $TMP_DIR/morph4.test
+perl $PARSER/xfst2wapiti_morphTest.pl -3 $TMP_DIR/morph3.result > $TMP_DIR/morph4.test
 
 $WAPITI label -m $MORPH4_MODEL $TMP_DIR/morph4.test > $TMP_DIR/morph4.result
 
-perl xfst2wapiti_morphTest.pl -4 $TMP_DIR/morph4.result > $TMP_DIR/$filename_no_ext.disamb.xfst
+perl $PARSER/xfst2wapiti_morphTest.pl -4 $TMP_DIR/morph4.result > $TMP_DIR/$filename_no_ext.disamb.xfst
 
 # (3) CONLL before|after
 # convert xfst to conll
