@@ -208,3 +208,6 @@ $ ./executable
 $ g++ -o test test.cpp -I/usr/include -L/usr/lib -lboost_regex
 ```
 
+#### Manual
+
+https://hinantin.gitbooks.io/squoia/content/
