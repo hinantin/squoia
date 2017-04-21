@@ -3508,6 +3508,8 @@ segundo_piso_de_la_casa segundo_piso_de_la_casa NCFS000 I
 segundo_piso segundo_piso NCFS000 I
 <gallito>_de_las_rocas gallito_de_las_rocas $1:NC I
 <gallo>_de_las_rocas gallo_de_las_rocas $1:NC I
+quechua_sureño quechua_sureño NPMS000 I
+quechua_del_sur quechua_del_sur NPMS000 I
 
 % augmentative adjectives
 grandote grande AQAMS0 A
