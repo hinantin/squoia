@@ -3493,10 +3493,15 @@ de_esta_manera de_esta_manera RG I
 <acabar>_de acabar_$L2 $1:VMI A
 <tener>_ganas_de tener_ganas_$L3 $1:VMI A
 <ayudar>_a ayudar_$L2 $1:VMI I
+<probar>_alimentos probar_alimentos $1:VM I
+<probar>_los_alimentos probar_los_alimentos $1:VM I
+<probar>_la_comida probar_la_comida $1:VM I
 
 % compound nouns
 papa_sancochada papa_sancochada NCFS000 I
+papas_sancochadas papa_sancochada NCFS000 I
 papa_cocida papa_cocida NCFS000 I
+papas_cocidas papa_cocida NCFS000 I
 ají_molido ají_molido NCFS000 I
 chuño_en_remojo chuño_en_remojo NCFS000 I
 chuño_remojado chuño_remojado NCFS000 I
