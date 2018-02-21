@@ -1,7 +1,7 @@
 <parallel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../HNTAshaninka/ParallelCorpus/parallel_texts.xsd">
     <text id="0001">
         <sentence lang="es">CÁMARA DE COMERCIO E INDUSTRIA PERUANO-ALEMANA</sentence>
-        <sentence lang="quz"/>
+        <sentence lang="quz">CÁMARA DE COMERCIO E INDUSTRIA PERUANO-ALEMANA NISQAMANTAS</sentence>
         <morphology/>
         <parsing>
 
