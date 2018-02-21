@@ -8,3 +8,9 @@ INTERNATIONALER WÄHRUNGSFONDS JAHRESBERICHT 2010 -- FONDO MONETARIO INTERNACION
 Deutsche Welle Akademie, ENTWICKLUNG UND MEDIEN Jahresbericht 2009 -- DESARROLLO Y MEDIOS Informe Anual 2009 
 LAI: 40 Jahre Lateinamerika-Institut -- 40 años del Instituto Austriaco para América Latina  
 Gregorio Condori Mamani, Autobiographie, Kapitel 1 und 4 -- Gregorio Condori Mamani, Autobiografía cap. 1 y 4
+
+@book{beck:riman:15,
+  title={Dios wawankunaman riman},
+  author={Beck, Eleonore and Cahuana Mamani, Magno},
+  year={2015},
+}
