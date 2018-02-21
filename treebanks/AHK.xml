@@ -1,0 +1,25 @@
+<parallel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../HNTAshaninka/ParallelCorpus/parallel_texts.xsd">
+    <text id="0001">
+        <sentence lang="es">CÁMARA DE COMERCIO E INDUSTRIA PERUANO-ALEMANA</sentence>
+        <sentence lang="quz"/>
+        <morphology/>
+        <parsing>
+
+
+1	CÁMARA	_	Root	Root	Root=NRootES	9	flm	_	_
+2	DE	_	SP	SP	_	1	--	_	_
+3	COMERCIO	_	Root	Root	Root=NRootES	4	--	_	_
+4	E	_	SP	SP	_	2	--	_	_
+5	INDUSTRIA	_	Root	Root	Root=NRootES	4	--	_	_
+6	PERUANO	_	Root	Root	Root=NRootES	5	--	_	_
+7	-	_	$.	$.	_	13	punc	_	_
+8	ALEMANA	_	Root	Root	Root=NRootES	5	--	_	_
+9	NI	_	Root	Root	Root=VRoot|trans=decir	11	s.arg.claus	_	_
+10	-SQA	_	NS	NS	NS=+Perf	9	ns	_	_
+11	-MANTA	_	Cas	Cas	Cas=+Abl	13	sntc	_	_
+12	-S	_	Amb	Amb	Amb=+IndE	11	ev	_	_
+13	VROOT	_	_	_	_	0	sentence	_	_
+
+</parsing>
+    </text>
+</parallel>
