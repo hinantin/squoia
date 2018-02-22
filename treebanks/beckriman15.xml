@@ -59,4 +59,27 @@ kaman	kama[VRoot][=gobernar,mandar,crear][^DB][--]n[VPers][+3.Sg.Subj]
 </morphology>
         <parsing/>
     </text>
+    <text id="0005">
+        <sentence lang="es">Al principio creó Dios el cielo y la tierra.</sentence>
+        <sentence lang="quz">Ñawpaqtaqa Dios kamarqan hanaqpachata teqsimuyuta ima.</sentence>
+        <morphology>
+
+
+Ñawpaqtaqa	ñawpaq[NRoot][=antes][^DB][--]ta[Cas][+Acc][^DB][--]qa[Amb][+Top]
+
+Dios	dios[NRootES]
+
+kamarqan	kama[VRoot][=gobernar,mandar,crear][^DB][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
+
+hanaqpachata	hanaq[NRoot][=arriba,superior][^DB][--]pacha[NRoot][=tiempo,mundo][^DB][--]ta[Cas][+Acc]
+
+teqsimuyuta	tiqsimuyu[NRoot][=globo,tierra,mundo][^DB][--]ta[Cas][+Acc]
+
+ima	ima[Part_Conec]
+
+.	.[$.]
+
+</morphology>
+        <parsing/>
+    </text>
 </parallel>
