@@ -127,4 +127,10 @@ patanpi	pata[NRoot][=al_lado,arriba][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pi[Cas
 </morphology>
         <parsing/>
     </text>
+    <text id="8">
+        <sentence lang="es">Entonces dijo Dios: -Que exista la luz. Y la luz dio claridad.</sentence>
+        <sentence lang="quz">Chhaynaqa, Dios nirqan: -K’anchay kachun, nispa. Hinan, k’anchay kapurqan.</sentence>
+        <morphology/>
+        <parsing/>
+    </text>
 </parallel>
