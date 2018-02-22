@@ -44,4 +44,19 @@ QALLARIYKUNA	qalla[VRoot][=empezar][--]ri[VDeriv][+Inch][^DB][--]y[NS][+Inf][--]
 </morphology>
         <parsing/>
     </text>
+    <text id="0004">
+        <sentence lang="es">1. Dios crea el mundo</sentence>
+        <sentence lang="quz">1. Dios teqsimuyuta kaman</sentence>
+        <morphology>
+
+
+Dios	dios[NRootES]
+
+teqsimuyuta	tiqsimuyu[NRoot][=globo,tierra,mundo][^DB][--]ta[Cas][+Acc]
+
+kaman	kama[VRoot][=gobernar,mandar,crear][^DB][--]n[VPers][+3.Sg.Subj]
+
+</morphology>
+        <parsing/>
+    </text>
 </parallel>
