@@ -105,4 +105,26 @@ kasharqan	ka[VRoot][=ser][^DB][--]chka[Asp][+Prog][--]rqa[Tns][+NPst][--]n[VPers
 </morphology>
         <parsing/>
     </text>
+    <text id="0007">
+        <sentence lang="es">Pero el Espíritu de Dios se movía sobre las aguas.</sentence>
+        <sentence lang="quz">Ichaqa Diospa espiritunmi unuq patanpi kuyukachasharqan.</sentence>
+        <sentence lang="qu">Ichaqa Diospa espíritunmi unup patanpi kuyukachachkarqan.</sentence>
+        <morphology>
+
+
+Ichaqa	icha[Part_Contr][^DB][--]qa[Amb][+Top]
+
+Diospa	dios[NRootES][^DB][--]pa[Cas][+Gen]
+
+espiritunmi	espíritu[NRootES][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]mi[Amb][+DirE]
+
+unuq	unu[NRoot][=agua,millón][^DB][--]p[Cas][+Gen]
+
+patanpi	pata[NRoot][=al_lado,arriba][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pi[Cas][+Loc]
+
+.	.[$.]
+
+</morphology>
+        <parsing/>
+    </text>
 </parallel>
