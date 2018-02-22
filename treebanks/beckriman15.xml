@@ -82,4 +82,27 @@ ima	ima[Part_Conec]
 </morphology>
         <parsing/>
     </text>
+    <text id="0006">
+        <sentence lang="es">La tierra estaba desierta y vacía.</sentence>
+        <sentence lang="quz">Kay pachan ch’inneqtaq ch’usaqtaq ima kasharqan.</sentence>
+        <morphology>
+
+
+Kay	kay[PrnDem]
+
+pachan	pacha[NRoot][=mundo,tiempo][^DB][--]m[Amb][+DirE]
+
+ch'inneqtaq	ch'inni[VRoot][=callar,apagarse][^DB][--]q[NS][+Ag][^DB][--]taq[Amb][+Con_Intr]
+
+ch'usaqtaq	ch'usaq[NRoot][=nada,vacío,ausente][^DB][--]taq[Amb][+Con_Intr]
+
+ima	ima[Part_Conec]
+
+kasharqan	ka[VRoot][=ser][^DB][--]chka[Asp][+Prog][--]rqa[Tns][+NPst][--]n[VPers][+3.Sg.Subj]
+
+.	.[$.]
+
+</morphology>
+        <parsing/>
+    </text>
 </parallel>
