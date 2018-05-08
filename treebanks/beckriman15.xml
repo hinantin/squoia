@@ -147,8 +147,8 @@ patanpi	pata[NRoot][=al_lado,arriba][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pi[Cas
         <parsing format="" analysislevel=""/>
     </text>
     <text id="11">
-        <sentence lang=""/>
-        <sentence lang=""/>
+        <sentence lang="es">Dijo a la luz: -Tú eres el día.</sentence>
+        <sentence lang="quz">Dios, k’anchayta nirqan: -Qanmi p’unchaw kanki, nispa.</sentence>
         <morphology format="" analysislevel=""/>
         <parsing format="" analysislevel=""/>
     </text>
