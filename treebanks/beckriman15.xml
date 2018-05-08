@@ -135,8 +135,8 @@ patanpi	pata[NRoot][=al_lado,arriba][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pi[Cas
         <parsing/>
     </text>
     <text id="9">
-        <sentence lang="es"/>
-        <sentence lang="quz"/>
+        <sentence lang="es">Dios vio que la luz era buena.</sentence>
+        <sentence lang="quz">Dios, k’anchay allin kasqanta rikurqan.</sentence>
         <morphology format="" analysislevel=""/>
         <parsing format="" analysislevel=""/>
     </text>
