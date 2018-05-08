@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <parallel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../HNTAshaninka/ParallelCorpus/parallel_texts.xsd">
-    <text id="0001">
+    <text id="1">
         <sentence lang="es">DIOS WAWANKUNAMAN RIMAN</sentence>
         <sentence lang="quz">DIOS HABLA A SUS HIJOS</sentence>
         <morphology>
@@ -18,7 +19,7 @@ RIMAN	rima[VRoot][=hablar][^DB][--]n[VPers][+3.Sg.Subj]
 
 </parsing>
     </text>
-    <text id="0002">
+    <text id="2">
         <sentence lang="es">DE LOS LIBROS DEL ANTIGUO TESTAMENTO</sentence>
         <sentence lang="quz">ÑAWPA TESTAMENTO QELQAKUNAMANTA</sentence>
         <morphology>
@@ -44,7 +45,7 @@ QALLARIYKUNA	qalla[VRoot][=empezar][--]ri[VDeriv][+Inch][^DB][--]y[NS][+Inf][--]
 </morphology>
         <parsing/>
     </text>
-    <text id="0004">
+    <text id="4">
         <sentence lang="es">1. Dios crea el mundo</sentence>
         <sentence lang="quz">1. Dios teqsimuyuta kaman</sentence>
         <morphology>
@@ -59,7 +60,7 @@ kaman	kama[VRoot][=gobernar,mandar,crear][^DB][--]n[VPers][+3.Sg.Subj]
 </morphology>
         <parsing/>
     </text>
-    <text id="0005">
+    <text id="5">
         <sentence lang="es">Al principio creó Dios el cielo y la tierra.</sentence>
         <sentence lang="quz">Ñawpaqtaqa Dios kamarqan hanaqpachata teqsimuyuta ima.</sentence>
         <morphology>
@@ -82,7 +83,7 @@ ima	ima[Part_Conec]
 </morphology>
         <parsing/>
     </text>
-    <text id="0006">
+    <text id="6">
         <sentence lang="es">La tierra estaba desierta y vacía.</sentence>
         <sentence lang="quz">Kay pachan ch’inneqtaq ch’usaqtaq ima kasharqan.</sentence>
         <morphology>
@@ -105,7 +106,7 @@ kasharqan	ka[VRoot][=ser][^DB][--]chka[Asp][+Prog][--]rqa[Tns][+NPst][--]n[VPers
 </morphology>
         <parsing/>
     </text>
-    <text id="0007">
+    <text id="7">
         <sentence lang="es">Pero el Espíritu de Dios se movía sobre las aguas.</sentence>
         <sentence lang="quz">Ichaqa Diospa espiritunmi unuq patanpi kuyukachasharqan.</sentence>
         <sentence lang="qu">Ichaqa Diospa espíritunmi unup patanpi kuyukachachkarqan.</sentence>
