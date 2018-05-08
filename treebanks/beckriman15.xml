@@ -134,4 +134,10 @@ patanpi	pata[NRoot][=al_lado,arriba][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pi[Cas
         <morphology/>
         <parsing/>
     </text>
+    <text id="9">
+        <sentence lang="es"/>
+        <sentence lang="quz"/>
+        <morphology format="" analysislevel=""/>
+        <parsing format="" analysislevel=""/>
+    </text>
 </parallel>
