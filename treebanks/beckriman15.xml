@@ -142,7 +142,7 @@ patanpi	pata[NRoot][=al_lado,arriba][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pi[Cas
     </text>
     <text id="10">
         <sentence lang="es">Dios separó la luz de la oscuridad.</sentence>
-        <sentence lang=""/>
+        <sentence lang="quz">Dios, k’anchayta laqhamanta t’aqarqan.</sentence>
         <morphology format="" analysislevel=""/>
         <parsing format="" analysislevel=""/>
     </text>
