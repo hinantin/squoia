@@ -1,3 +1,5 @@
+#!bin/bash
+
 TEXT=$1
 echo "$1" | perl translate.pm -d esqu -o prepdisamb > tmp/tmp2.xml
 echo "Using Hinantin's IntraChunk Transfer"
