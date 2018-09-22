@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <parallel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../HNTAshaninka/ParallelCorpus/parallel_texts.xsd">
     <text id="1">
-        <sentence lang="es">DIOS WAWANKUNAMAN RIMAN</sentence>
-        <sentence lang="quz">DIOS HABLA A SUS HIJOS</sentence>
+        <sentence lang="quz">DIOS WAWANKUNAMAN RIMAN</sentence>
+        <sentence lang="es">DIOS HABLA A SUS HIJOS</sentence>
         <morphology>
 
 
@@ -20,8 +20,8 @@ RIMAN	rima[VRoot][=hablar][^DB][--]n[VPers][+3.Sg.Subj]
 </parsing>
     </text>
     <text id="2">
-        <sentence lang="es">DE LOS LIBROS DEL ANTIGUO TESTAMENTO</sentence>
-        <sentence lang="quz">ÑAWPA TESTAMENTO QELQAKUNAMANTA</sentence>
+        <sentence lang="quz">DE LOS LIBROS DEL ANTIGUO TESTAMENTO</sentence>
+        <sentence lang="es">ÑAWPA TESTAMENTO QELQAKUNAMANTA</sentence>
         <morphology>
 
 
