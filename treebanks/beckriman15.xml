@@ -164,4 +164,10 @@ patanpi	pata[NRoot][=al_lado,arriba][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pi[Cas
         <morphology format="" analysislevel=""/>
         <parsing format="" analysislevel=""/>
     </text>
+    <text id="14">
+        <sentence lang="quz">Dios nirqan: -Phuyukuna hanaq pachapi huñukuchunku.</sentence>
+        <sentence lang="es">Dijo Dios: -Reúnanse en lo alto las nubes.</sentence>
+        <morphology format="" analysislevel=""/>
+        <parsing format="" analysislevel=""/>
+    </text>
 </parallel>
