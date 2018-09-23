@@ -170,4 +170,10 @@ patanpi	pata[NRoot][=al_lado,arriba][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pi[Cas
         <morphology format="" analysislevel=""/>
         <parsing format="" analysislevel=""/>
     </text>
+    <text id="15">
+        <sentence lang="prq">Paykunam antan para pachaman  urmayamunqa.</sentence>
+        <sentence lang="es">De ellas caerá lluvia sobre la tierra.</sentence>
+        <morphology format="" analysislevel=""/>
+        <parsing format="" analysislevel=""/>
+    </text>
 </parallel>
