@@ -171,8 +171,14 @@ patanpi	pata[NRoot][=al_lado,arriba][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pi[Cas
         <parsing format="" analysislevel=""/>
     </text>
     <text id="15">
-        <sentence lang="prq">Paykunam antan para pachaman  urmayamunqa.</sentence>
+        <sentence lang="quz">Paykunam antan para pachaman  urmayamunqa.</sentence>
         <sentence lang="es">De ellas caerá lluvia sobre la tierra.</sentence>
+        <morphology format="" analysislevel=""/>
+        <parsing format="" analysislevel=""/>
+    </text>
+    <text id="16">
+        <sentence lang="quz">Unukunataq huñukunqaku chuchu hallp’a rikhurinanpaq.</sentence>
+        <sentence lang="es">Y las aguas se juntarán para que aparezca la tierra firme.</sentence>
         <morphology format="" analysislevel=""/>
         <parsing format="" analysislevel=""/>
     </text>
