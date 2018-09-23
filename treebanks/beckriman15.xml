@@ -20,8 +20,8 @@ RIMAN	rima[VRoot][=hablar][^DB][--]n[VPers][+3.Sg.Subj]
 </parsing>
     </text>
     <text id="2">
-        <sentence lang="quz">DE LOS LIBROS DEL ANTIGUO TESTAMENTO</sentence>
-        <sentence lang="es">ÑAWPA TESTAMENTO QELQAKUNAMANTA</sentence>
+        <sentence lang="quz">ÑAWPA TESTAMENTO QELQAKUNAMANTA</sentence>
+        <sentence lang="es">DE LOS LIBROS DEL ANTIGUO TESTAMENTO</sentence>
         <morphology>
 
 
@@ -35,8 +35,8 @@ QELQAKUNAMANTA	qillqa[NRoot][=letra][--]kuna[Num][+Pl][^DB][--]manta[Cas][+Abl]
         <parsing/>
     </text>
     <text id="0003">
-        <sentence lang="es">LOS ORÍGENES</sentence>
         <sentence lang="quz">QALLARIYKUNA</sentence>
+        <sentence lang="es">LOS ORÍGENES</sentence>
         <morphology>
 
 
@@ -46,8 +46,8 @@ QALLARIYKUNA	qalla[VRoot][=empezar][--]ri[VDeriv][+Inch][^DB][--]y[NS][+Inf][--]
         <parsing/>
     </text>
     <text id="4">
-        <sentence lang="es">1. Dios crea el mundo</sentence>
         <sentence lang="quz">1. Dios teqsimuyuta kaman</sentence>
+        <sentence lang="es">1. Dios crea el mundo</sentence>
         <morphology>
 
 
@@ -61,8 +61,8 @@ kaman	kama[VRoot][=gobernar,mandar,crear][^DB][--]n[VPers][+3.Sg.Subj]
         <parsing/>
     </text>
     <text id="5">
-        <sentence lang="es">Al principio creó Dios el cielo y la tierra.</sentence>
         <sentence lang="quz">Ñawpaqtaqa Dios kamarqan hanaqpachata teqsimuyuta ima.</sentence>
+        <sentence lang="es">Al principio creó Dios el cielo y la tierra.</sentence>
         <morphology>
 
 
@@ -84,8 +84,8 @@ ima	ima[Part_Conec]
         <parsing/>
     </text>
     <text id="6">
-        <sentence lang="es">La tierra estaba desierta y vacía.</sentence>
         <sentence lang="quz">Kay pachan ch’inneqtaq ch’usaqtaq ima kasharqan.</sentence>
+        <sentence lang="es">La tierra estaba desierta y vacía.</sentence>
         <morphology>
 
 
@@ -107,9 +107,9 @@ kasharqan	ka[VRoot][=ser][^DB][--]chka[Asp][+Prog][--]rqa[Tns][+NPst][--]n[VPers
         <parsing/>
     </text>
     <text id="7">
-        <sentence lang="es">Pero el Espíritu de Dios se movía sobre las aguas.</sentence>
         <sentence lang="quz">Ichaqa Diospa espiritunmi unuq patanpi kuyukachasharqan.</sentence>
         <sentence lang="qu">Ichaqa Diospa espíritunmi unup patanpi kuyukachachkarqan.</sentence>
+        <sentence lang="es">Pero el Espíritu de Dios se movía sobre las aguas.</sentence>
         <morphology>
 
 
@@ -129,38 +129,38 @@ patanpi	pata[NRoot][=al_lado,arriba][^DB][--]n[NPers][+3.Sg.Poss][^DB][--]pi[Cas
         <parsing/>
     </text>
     <text id="8">
-        <sentence lang="es">Entonces dijo Dios: -Que exista la luz. Y la luz dio claridad.</sentence>
         <sentence lang="quz">Chhaynaqa, Dios nirqan: -K’anchay kachun, nispa. Hinan, k’anchay kapurqan.</sentence>
+        <sentence lang="es">Entonces dijo Dios: -Que exista la luz. Y la luz dio claridad.</sentence>
         <morphology/>
         <parsing/>
     </text>
     <text id="9">
-        <sentence lang="es">Dios vio que la luz era buena.</sentence>
         <sentence lang="quz">Dios, k’anchay allin kasqanta rikurqan.</sentence>
+        <sentence lang="es">Dios vio que la luz era buena.</sentence>
         <morphology format="" analysislevel=""/>
         <parsing format="" analysislevel=""/>
     </text>
     <text id="10">
-        <sentence lang="es">Dios separó la luz de la oscuridad.</sentence>
         <sentence lang="quz">Dios, k’anchayta laqhamanta t’aqarqan.</sentence>
+        <sentence lang="es">Dios separó la luz de la oscuridad.</sentence>
         <morphology format="" analysislevel=""/>
         <parsing format="" analysislevel=""/>
     </text>
     <text id="11">
-        <sentence lang="es">Dijo a la luz: -Tú eres el día.</sentence>
         <sentence lang="quz">Dios, k’anchayta nirqan: -Qanmi p’unchaw kanki, nispa.</sentence>
+        <sentence lang="es">Dijo a la luz: -Tú eres el día.</sentence>
         <morphology format="" analysislevel=""/>
         <parsing format="" analysislevel=""/>
     </text>
     <text id="12">
-        <sentence lang="es">Dijo a la oscuridad: -Tú eres la noche.</sentence>
         <sentence lang="quz">Laqhatataq, nirqan: -Qanmi tuta kanki, nispa.</sentence>
+        <sentence lang="es">Dijo a la oscuridad: -Tú eres la noche.</sentence>
         <morphology format="" analysislevel=""/>
         <parsing format="" analysislevel=""/>
     </text>
     <text id="13">
-        <sentence lang="es">Fue el prim er día.</sentence>
         <sentence lang="quz">Ñawpa kaq p’unchaw karqan.</sentence>
+        <sentence lang="es">Fue el primer día.</sentence>
         <morphology format="" analysislevel=""/>
         <parsing format="" analysislevel=""/>
     </text>
