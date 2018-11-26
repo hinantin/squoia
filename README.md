@@ -11,9 +11,13 @@ The contents of this repository were forked from the Squoia Repository, you can 
 }
 ```
 
-### Developer documentation
+### How to download
 
-https://legacy.gitbook.com/book/hinantin/squoia/details
+Cloning
+
+```
+$ git clone https://github.com/hinantin/squoia
+```
 
 ### Hinantin
 
