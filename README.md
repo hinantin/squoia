@@ -33,8 +33,8 @@ $ vim <SQUOIA_PATH>/MT_systems/squoia/esqu/es-qu.cfg
 Define where to look (path) for grammar file for the translation:
 
 ```
-GRAMMAR_DIR=/home/hinantin/squoia/MT_systems/squoia/esqu/grammar
-SQUOIA_DIR=/home/hinantin/squoia/MT_systems
+GRAMMAR_DIR=<SQUOIA_PATH>/MT_systems/squoia/esqu/grammar
+SQUOIA_DIR=<SQUOIA_PATH>/MT_systems
 ```
 
 ### Hinantin
