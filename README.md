@@ -24,8 +24,10 @@ $ git clone https://github.com/hinantin/squoia
 
 #### STEP 2: 
 
+Modify the configuration file 
+
 ```
-$ <SQUOIA_PATH>/MT_systems/squoia/esqu
+$ vim <SQUOIA_PATH>/MT_systems/squoia/esqu/es-qu.cfg
 ```
 
 ### Hinantin
