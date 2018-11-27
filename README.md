@@ -113,6 +113,14 @@ $ export FREELINGSHARE=/usr/local/share/freeling
 $ ./server_squoia -f  <SQUOIA_PATH>/FreeLingModules/es_squoia.cfg --server --port=8844 2> logtagging &
 ```
 
+Link client and server in MT_systems/bin
+
+```
+$ mkdir -p <SQUOIA_PATH>/MT_systems/bin
+$ cd <SQUOIA_PATH>/MT_systems/bin
+$ ln -s ../../FreeLingModules/analyzer_client analyzer_client
+$ ln -s ../../FreeLingModules/server_squoia server_squoia
+```
 
 ### Hinantin
 
