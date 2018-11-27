@@ -2,8 +2,8 @@
 set -x #echo on
 
 FREELING_INCLUDE=/usr/local/include
-FREELING_SRC=/home/richard/Downloads/01_Instaladores/freeling/FreeLing-4.0-beta1/src #freeling >= 4 source code 
-SQUOIA_REPOSITORY=/home/richard/Documents/squoia #squoia repository
+FREELING_SRC=/home/hinantin/FreeLing/src #freeling >= 4 source code 
+SQUOIA_REPOSITORY=/home/hinantin/squoia #squoia repository
 STD=gnu++0x # This standard may vary acconding to your operating system
 
 # Compiling CRF module
@@ -24,16 +24,14 @@ g++ -O3 -Wall -o server_squoia server_squoia.o output_crf.o -L/usr/local/lib -lf
 g++ -O3 -Wall -o analyzer_client analyzer_client.o -L /usr/local/lib -lfreeling 
 
 # Start server 
-export FREELINGSHARE=/usr/local/share/freeling
-
-./server_squoia -f /home/richard/Documents/squoia/FreeLingModules/es_squoia.cfg --server --port=8844 2> logtagging &
-
-echo "esto es mi test" | ./analyzer_client 8844  
+# export FREELINGSHARE=/usr/local/share/freeling
+# ./server_squoia -f /home/richard/Documents/squoia/FreeLingModules/es_squoia.cfg --server --port=8844 2> logtagging &
+# echo "esto es mi test" | ./analyzer_client 8844  
 
 # link client and server in MT_systems/bin
-mkdir -p /home/richard/Documents/squoia/MT_systems/bin
-cd /home/richard/Documents/squoia/MT_systems/bin
-ln -s ../../FreeLingModules/analyzer_client analyzer_client
-ln -s ../../FreeLingModules/server_squoia server_squoia
+# mkdir -p /home/richard/Documents/squoia/MT_systems/bin
+# cd /home/richard/Documents/squoia/MT_systems/bin
+# ln -s ../../FreeLingModules/analyzer_client analyzer_client
+# ln -s ../../FreeLingModules/server_squoia server_squoia
 
 # analyze -f es.cfg --server -p 8866
