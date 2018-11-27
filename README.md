@@ -30,6 +30,13 @@ Modify the configuration file
 $ vim <SQUOIA_PATH>/MT_systems/squoia/esqu/es-qu.cfg
 ```
 
+Define where to look (path) for grammar file for the translation:
+
+```
+GRAMMAR_DIR=/home/hinantin/squoia/MT_systems/squoia/esqu/grammar
+SQUOIA_DIR=/home/hinantin/squoia/MT_systems
+```
+
 ### Hinantin
 
 As of today the objective of this version of the Squoia repository is to improve the performance of the certain scripts when querying an XML document, for this purpuse we are replacing gradually the use of the `XML::LibXML` perl library for eXist-db (needles to say this version needs eXist-db to be installed in order for it to work appropriately. See the file `<SQUOIA_PATH>/eXist-db.md` for installation details).
