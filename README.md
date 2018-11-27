@@ -37,6 +37,19 @@ GRAMMAR_DIR=<SQUOIA_PATH>/MT_systems/squoia/esqu/grammar
 SQUOIA_DIR=<SQUOIA_PATH>/MT_systems
 ```
 
+##### Wapiti
+
+Please download this Wapiti version `https://github.com/rcastromamani/Wapiti`, for the official version does not support a server mode as of today.
+
+```
+$ git clone https://github.com/rcastromamani/Wapiti
+$ cd Wapiti
+$ ./wapiti label --server -P 8888 --force -m /home/richard/Documents/squoia/MT_systems/models/3gram_enhancedAncora.model
+```
+###### Note: 
+
+In order to run the Wapiti server with the model you will need at least 7 GB of RAM memory. 
+
 ### Hinantin
 
 As of today the objective of this version of the Squoia repository is to improve the performance of the certain scripts when querying an XML document, for this purpuse we are replacing gradually the use of the `XML::LibXML` perl library for eXist-db (needles to say this version needs eXist-db to be installed in order for it to work appropriately. See the file `<SQUOIA_PATH>/eXist-db.md` for installation details).
