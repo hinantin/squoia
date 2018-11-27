@@ -44,7 +44,7 @@ Please download this Wapiti version `https://github.com/rcastromamani/Wapiti`, f
 ```
 $ git clone https://github.com/rcastromamani/Wapiti
 $ cd Wapiti
-$ ./wapiti label --server -P 8888 --force -m /home/richard/Documents/squoia/MT_systems/models/3gram_enhancedAncora.model
+$ ./wapiti label --server -P 8888 --force -m <SQUOIA_PATH>/MT_systems/models/3gram_enhancedAncora.model
 ```
 ###### Note: 
 
