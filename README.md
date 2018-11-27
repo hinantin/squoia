@@ -11,12 +11,21 @@ The contents of this repository were forked from the Squoia Repository, you can 
 }
 ```
 
-### How to download
+### How to install 
 
-Cloning
+#### STEP 1: Cloning the repository
 
 ```
 $ git clone https://github.com/hinantin/squoia
+```
+##### `<SQUOIA_PATH>`
+
+`<SQUOIA_PATH>` is used throughout this manual to refer to the path where you have downloaded the contents of the squoia repository, in my case the path is `/home/richard/Documents/squoia`. You should change this to adjust it to your own environment.
+
+#### STEP 2: 
+
+```
+$ <SQUOIA_PATH>/MT_systems/squoia/esqu
 ```
 
 ### Hinantin
@@ -26,10 +35,6 @@ As of today the objective of this version of the Squoia repository is to improve
 Another objective is to increase and correct certain issues we had with the Normalizer tool, by increasing its lexicon and rules.
 
 ### Linguistic Resources used in this project
-
-#### `<SQUOIA_PATH>`
-
-`<SQUOIA_PATH>` is used throughout this manual to refer to the path where you have downloaded the contents of the squoia repository, in my case the path is `/home/richard/Documents/squoia`. You should change this to adjust it to your own environment.
 
 #### Lexica
 
