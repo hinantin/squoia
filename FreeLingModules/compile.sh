@@ -23,6 +23,7 @@ g++ -O3 -Wall -o server_squoia server_squoia.o output_crf.o -L/usr/local/lib -lf
 
 g++ -O3 -Wall -o analyzer_client analyzer_client.o -L /usr/local/lib -lfreeling 
 
+# Start server 
 export FREELINGSHARE=/usr/local/share/freeling
 
 ./server_squoia -f /home/richard/Documents/squoia/FreeLingModules/es_squoia.cfg --server --port=8844 2> logtagging &

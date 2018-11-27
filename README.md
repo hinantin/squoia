@@ -59,6 +59,46 @@ wapitiPort=5555
 wapitiHost=localhost
 ```
 
+##### Freeling. 4.1
+
+```
+# --- Compiling Freeling
+# --- autoreconf -i 
+$ sudo apt-get install autoconf autoconf2.13
+$ sudo apt-get install libboost-dev libboost-regex-dev libicu-dev libboost-system-dev libboost-program-options-dev libboost-thread-dev zlib1g-dev
+$ sudo apt-get install libtool automake libtool zlib1g-dev libboost-dev  libboost-test-dev libboost-system-dev libboost-thread-dev
+$ sudo apt-get install libblkid-dev e2fslibs-dev libboost-all-dev libaudit-dev
+$ sudo apt-get install g++
+# CMAKE
+$ version=3.12
+$ build=3
+$ mkdir ~/temp
+$ cd ~/temp
+$ wget https://cmake.org/files/v$version/cmake-$version.$build.tar.gz
+$ tar -xzvf cmake-$version.$build.tar.gz
+$ cd cmake-$version.$build/
+
+$ ./bootstrap
+$ make -j4
+$ sudo make install
+
+$ git clone https://github.com/TALP-UPC/FreeLing
+$ cd FreeLing/
+$ mkdir build
+$ cd build
+$ cmake .. 
+# or 
+$ /usr/local/bin/cmake --version
+$ make install
+
+# --- Running server_squoia 
+$ cd <SQUOIA_PATH>/FreeLingModules
+$ export FREELINGSHARE=/usr/local/share/freeling
+$ ./server_squoia -f /home/richard/Documents/squoia/FreeLingModules/es_squoia.cfg --server --port=8844 2> logtagging &
+```
+
+
+
 ### Hinantin
 
 As of today the objective of this version of the Squoia repository is to improve the performance of the certain scripts when querying an XML document, for this purpuse we are replacing gradually the use of the `XML::LibXML` perl library for eXist-db (needles to say this version needs eXist-db to be installed in order for it to work appropriately. See the file `<SQUOIA_PATH>/eXist-db.md` for installation details).
