@@ -50,6 +50,15 @@ $ ./wapiti label --server -P 8888 --force -m <SQUOIA_PATH>/MT_systems/models/3gr
 
 In order to run the Wapiti server with the model you will need at least 7 GB of RAM memory. 
 
+Modify the wapiti variables within the es-qu.cfg configuration file.
+
+```
+wapiti=/home/hinantin/Wapiti
+wapitiModel=$SQUOIA_DIR/models/3gram_enhancedAncora.model
+wapitiPort=5555
+wapitiHost=localhost
+```
+
 ### Hinantin
 
 As of today the objective of this version of the Squoia repository is to improve the performance of the certain scripts when querying an XML document, for this purpuse we are replacing gradually the use of the `XML::LibXML` perl library for eXist-db (needles to say this version needs eXist-db to be installed in order for it to work appropriately. See the file `<SQUOIA_PATH>/eXist-db.md` for installation details).
