@@ -90,13 +90,23 @@ $ cmake ..
 # or 
 $ /usr/local/bin/cmake --version
 $ make install
+```
 
+Modify the file  <SQUOIA_PATH>/FreeLingModules/compile.sh, rewrite the following paths.  
+
+```
+FREELING_SRC=/home/hinantin/FreeLing/src #freeling >= 4 source code 
+SQUOIA_REPOSITORY=/home/hinantin/squoia #squoia repository
+```
+
+```
+$ cd <SQUOIA_PATH>/FreeLingModules/
+$ bash compile.sh 
 # --- Running server_squoia 
 $ cd <SQUOIA_PATH>/FreeLingModules
 $ export FREELINGSHARE=/usr/local/share/freeling
-$ ./server_squoia -f /home/richard/Documents/squoia/FreeLingModules/es_squoia.cfg --server --port=8844 2> logtagging &
+$ ./server_squoia -f  <SQUOIA_PATH>/FreeLingModules/es_squoia.cfg --server --port=8844 2> logtagging &
 ```
-
 
 
 ### Hinantin
