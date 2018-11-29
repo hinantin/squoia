@@ -149,6 +149,9 @@ $ bash autogen.sh
 $ make
 $ sudo make install
 $ cd ..
+$ cd <SQUOIA_PATH>/MT_systems/squoia/esqu/lexica/
+$ lt-comp lr es-quz.dix es-quz.bin
+$ 
 ```
 
 ```
