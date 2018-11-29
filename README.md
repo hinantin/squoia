@@ -133,6 +133,25 @@ freelingConf=<SQUOIA_PATH>/FreeLingModules/es_squoia.cfg
 
 ##### lttoolbox 
 
+```
+$ sudo apt-get install autoconf pkgconf
+# libxml2
+$ git clone https://github.com/GNOME/libxml2
+$ cd libxml2
+$ bash autogen.sh
+$ make
+$ sudo make install
+$ cd ..
+# lttoolbox
+$ https://github.com/apertium/lttoolbox
+$ cd lttoolbox
+$ bash autogen.sh
+$ make
+$ sudo make install
+$ cd ..
+
+```
+
 ### Hinantin
 
 As of today the objective of this version of the Squoia repository is to improve the performance of the certain scripts when querying an XML document, for this purpuse we are replacing gradually the use of the `XML::LibXML` perl library for eXist-db (needles to say this version needs eXist-db to be installed in order for it to work appropriately. See the file `<SQUOIA_PATH>/eXist-db.md` for installation details).
