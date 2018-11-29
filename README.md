@@ -88,7 +88,7 @@ $ mkdir build
 $ cd build
 $ cmake .. 
 # or 
-$ /usr/local/bin/cmake --version
+$ /usr/local/bin/cmake .. 
 $ make install
 ```
 
