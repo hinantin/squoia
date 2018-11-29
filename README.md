@@ -149,7 +149,13 @@ $ bash autogen.sh
 $ make
 $ sudo make install
 $ cd ..
+```
 
+```
+$ sudo apt-get install libxml2-dev libxslt1-dev 
+$ sudo apt-get install libpcre3 libpcre3–dev 
+$ cd <SQUOIA_PATH>/MT_systems/matxin-lex
+$ bash compile.sh 
 ```
 
 ### Hinantin

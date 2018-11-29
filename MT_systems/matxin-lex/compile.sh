@@ -1,6 +1,6 @@
 #!/bin/bash
 
-g++ -std=gnu++0x -c -o squoia_xfer_lex.o squoia_xfer_lex.cc -I/usr/local/include/lttoolbox-3.3 -I/usr/local/lib/lttoolbox-3.3/include -I/usr/include/libxml2
+g++ -std=gnu++0x -c -o squoia_xfer_lex.o squoia_xfer_lex.cc -I/usr/local/include/lttoolbox-3.5 -I/usr/local/lib/lttoolbox-3.5/include -I/usr/include/libxml2
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 g++ -O3 -Wall -o squoia_xfer_lex squoia_xfer_lex.o -L/usr/local/lib -llttoolbox3 -lxml2 -lpcre
 
