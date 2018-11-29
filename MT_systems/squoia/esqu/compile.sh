@@ -8,7 +8,7 @@ rm -f outputSentences outputSentences.o compile.log
 
 # --- Compiling 
 # --- Linking the shared libraries (For linking <path_to_shared_object>/lib{name}.so write -L<path_to_shared_object>/ -l{name}) and static libraries (For linking <path_to_static_lib>/lib{name}.a write -L<path_to_static_lib>/ -l{name})
-$CXX -std=$STD -o outputSentences outputSentences.cpp -I/home/richard/Documents/kenlm -I/usr/include -DKENLM_MAX_ORDER=6 -L/home/richard/Documents/kenlm/build/lib -L/home/richard/Documents/kenlm/build/lib/ -lkenlm -lkenlm_util -lkenlm_filter -lkenlm_builder -L/usr/local/lib/ -lfoma -lz -L/usr/lib -lboost_regex -L/home/richard/Documents/bzip2-1.0.6/ -lbz2 2>&1 | tee -a compile.log
+$CXX -std=$STD -o outputSentences outputSentences.cpp -I/home/hinantin/kenlm/ -I/usr/include -DKENLM_MAX_ORDER=6 -L/home/hinantin/kenlm/build/lib -L/home/hinantin/kenlm/build/lib/ -lkenlm -lkenlm_util -lkenlm_filter -lkenlm_builder -L/usr/local/lib/ -lfoma -lz -llzma -L/usr/lib -lboost_regex -L/home/hinantin/bzip2-1.0.6 -lbz2 2>&1 | tee -a compile.log
 
 # export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
