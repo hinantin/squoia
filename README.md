@@ -156,6 +156,9 @@ $ sudo apt-get install libxml2-dev libxslt1-dev
 $ sudo apt-get install libpcre3 libpcre3–dev 
 $ cd <SQUOIA_PATH>/MT_systems/matxin-lex
 $ bash compile.sh 
+# Linking executable 
+$ cd <SQUOIA_PATH>/MT_systems/bin
+$ ln -s ../matxin-lex/squoia_xfer_lex
 ```
 
 ### Hinantin
