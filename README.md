@@ -163,6 +163,31 @@ $ bash compile.sh
 $ cd <SQUOIA_PATH>/MT_systems/bin
 $ ln -s ../matxin-lex/squoia_xfer_lex
 ```
+### Compiling transducers
+
+```
+$ cd <SQUOIA_PATH>/MT_systems/squoia/esqu/morphgen
+$ xfst -f unificadoTransfer.xfst
+$ cd ..
+$ cd morphgen_foma/
+$ foma -f unificadoTransfer.foma
+
+$ sudo apt-get install liblzma-dev
+$ git clone https://github.com/kpu/kenlm
+$ cd kenlm/
+$ mkdir -p build
+$ cd build
+$ /usr/local/bin/cmake ..
+$  make -j 4
+
+
+$ tar -zxvf bzip2-1.0.6.tar.gz
+$ cd bzip2-1.0.6
+$ make 
+$ sudo make install
+
+$ bash compile.sh
+```
 
 ### Hinantin
 
