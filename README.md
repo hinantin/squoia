@@ -186,7 +186,10 @@ $ cd bzip2-1.0.6
 $ make 
 $ sudo make install
 
+# Getting outputSentences executable 
+$ cd <SQUOIA_PATH>/MT_systems/squoia/esqu
 $ bash compile.sh
+
 ```
 
 ### Hinantin
