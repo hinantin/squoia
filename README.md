@@ -163,6 +163,20 @@ $ bash compile.sh
 $ cd <SQUOIA_PATH>/MT_systems/bin
 $ ln -s ../matxin-lex/squoia_xfer_lex
 ```
+
+#### MaltParser
+
+```
+$ wget http://maltparser.org/dist/maltparser-1.9.2.tar.gz
+$ tar -zxvf maltparser-1.9.2.tar.gz
+```
+
+Modify the MaltParser variables within the es-qu.cfg configuration file.
+
+```
+maltPath=/home/hinantin/maltparser-1.9.2/maltparser-1.9.2.jar
+```
+
 ### Compiling transducers
 
 ```
@@ -179,7 +193,6 @@ $ mkdir -p build
 $ cd build
 $ /usr/local/bin/cmake ..
 $  make -j 4
-
 
 $ tar -zxvf bzip2-1.0.6.tar.gz
 $ cd bzip2-1.0.6
